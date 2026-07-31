@@ -531,3 +531,140 @@
 
 
 }
+
+
+/*======================================
+ MOBILE MENU
+======================================*/
+
+.menu-toggle{
+
+display:none;
+
+flex-direction:column;
+
+justify-content:center;
+
+gap:6px;
+
+cursor:pointer;
+
+width:45px;
+
+height:45px;
+
+z-index:1001;
+
+}
+
+
+
+.menu-toggle span{
+
+display:block;
+
+height:3px;
+
+width:28px;
+
+background:#fff;
+
+border-radius:50px;
+
+transition:.4s;
+
+}
+
+
+
+/* Animation */
+
+.menu-toggle.active span:nth-child(1){
+
+transform:translateY(9px) rotate(45deg);
+
+}
+
+.menu-toggle.active span:nth-child(2){
+
+opacity:0;
+
+}
+
+.menu-toggle.active span:nth-child(3){
+
+transform:translateY(-9px) rotate(-45deg);
+
+}
+
+
+
+/* Responsive */
+
+@media(max-width:992px){
+
+.menu-toggle{
+
+display:flex;
+
+}
+
+
+
+.nav{
+
+position:fixed;
+
+top:95px;
+
+left:-100%;
+
+width:100%;
+
+height:calc(100vh - 95px);
+
+background:#050505;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+transition:.45s ease;
+
+z-index:999;
+
+}
+
+
+
+.nav.active{
+
+left:0;
+
+}
+
+
+
+.nav ul{
+
+flex-direction:column;
+
+gap:35px;
+
+text-align:center;
+
+}
+
+
+
+.nav ul li a{
+
+font-size:24px;
+
+font-weight:600;
+
+}
+
+}
