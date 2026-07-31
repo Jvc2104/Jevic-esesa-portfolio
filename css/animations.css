@@ -1,0 +1,987 @@
+/* =====================================================
+   ANIMATIONS GLOBAL
+===================================================== */
+
+
+/* =====================================================
+   APPARITION AU CHARGEMENT
+===================================================== */
+
+
+.fade-in {
+
+    opacity:0;
+
+    animation:fadeIn 1s ease forwards;
+
+}
+
+
+
+.fade-up {
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+    animation:fadeUp 1s ease forwards;
+
+}
+
+
+
+.fade-left {
+
+    opacity:0;
+
+    transform:translateX(-50px);
+
+    animation:fadeLeft 1s ease forwards;
+
+}
+
+
+
+.fade-right {
+
+    opacity:0;
+
+    transform:translateX(50px);
+
+    animation:fadeRight 1s ease forwards;
+
+}
+
+
+
+
+
+@keyframes fadeIn {
+
+
+    from{
+
+        opacity:0;
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+
+
+
+
+@keyframes fadeUp {
+
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+
+
+
+@keyframes fadeLeft {
+
+
+    from{
+
+        opacity:0;
+
+        transform:translateX(-50px);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:translateX(0);
+
+    }
+
+}
+
+
+
+
+
+@keyframes fadeRight {
+
+
+    from{
+
+        opacity:0;
+
+        transform:translateX(50px);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:translateX(0);
+
+    }
+
+}
+
+
+
+
+
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+
+.logo img {
+
+
+    animation:logoFloat 4s ease-in-out infinite;
+
+
+}
+
+
+
+@keyframes logoFloat {
+
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+
+    50%{
+
+        transform:translateY(-5px);
+
+    }
+
+}
+
+
+
+
+
+/* =====================================================
+   HERO IMAGE
+===================================================== */
+
+
+.hero-image img {
+
+
+    animation:imageReveal 1.5s ease forwards,
+              imageFloat 5s ease-in-out infinite;
+
+
+}
+
+
+
+
+@keyframes imageReveal {
+
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.8);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+
+
+
+
+@keyframes imageFloat {
+
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+
+    50%{
+
+        transform:translateY(-15px);
+
+    }
+
+}
+
+
+
+
+
+
+/* =====================================================
+   TITRE HERO
+===================================================== */
+
+
+.hero h1 {
+
+
+    animation:titleReveal 1.2s ease forwards;
+
+
+}
+
+
+
+@keyframes titleReveal {
+
+
+    from{
+
+        opacity:0;
+
+        letter-spacing:8px;
+
+        transform:translateY(30px);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        letter-spacing:0;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+
+
+
+
+/* =====================================================
+   BOUTONS
+===================================================== */
+
+
+.btn-primary {
+
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+
+
+
+
+.btn-primary::before {
+
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-100%;
+
+    width:100%;
+
+    height:100%;
+
+
+    background:linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,.5),
+        transparent
+    );
+
+
+    transition:.6s;
+
+
+}
+
+
+
+.btn-primary:hover::before {
+
+
+    left:100%;
+
+
+}
+
+
+
+
+
+.btn-outline:hover {
+
+
+    box-shadow:
+    0 0 20px rgba(255,255,255,.4);
+
+
+}
+
+
+
+
+
+
+/* =====================================================
+   FLOATING CARDS 3D
+===================================================== */
+
+
+.floating-card {
+
+
+    transform-style:preserve-3d;
+
+    transition:.5s;
+
+
+}
+
+
+
+
+.floating-card:hover {
+
+
+    transform:
+
+    translateY(-10px)
+
+    rotateX(10deg)
+
+    rotateY(-10deg);
+
+
+    border-color:#ff6b00;
+
+
+}
+
+
+
+
+
+
+/* =====================================================
+   SOCIAL ICONS
+===================================================== */
+
+
+.hero-social a {
+
+
+    animation:socialPulse 3s infinite;
+
+
+}
+
+
+
+.hero-social a:nth-child(2){
+
+    animation-delay:.3s;
+
+}
+
+
+.hero-social a:nth-child(3){
+
+    animation-delay:.6s;
+
+}
+
+
+.hero-social a:nth-child(4){
+
+    animation-delay:.9s;
+
+}
+
+
+.hero-social a:nth-child(5){
+
+    animation-delay:1.2s;
+
+}
+
+
+
+
+
+@keyframes socialPulse {
+
+
+    0%,100%{
+
+        box-shadow:none;
+
+    }
+
+
+    50%{
+
+        box-shadow:
+
+        0 0 20px rgba(255,107,0,.4);
+
+    }
+
+}
+
+
+
+
+
+
+/* =====================================================
+   SCROLL REVEAL PREPARATION
+===================================================== */
+
+
+.reveal {
+
+
+    opacity:0;
+
+    transform:translateY(50px);
+
+    transition:1s ease;
+
+
+}
+
+
+
+.reveal.active {
+
+
+    opacity:1;
+
+    transform:translateY(0);
+
+
+}
+
+
+
+
+
+
+/* =====================================================
+   CURSEUR LUMINEUX
+===================================================== */
+
+
+.cursor-glow {
+
+
+    width:20px;
+
+    height:20px;
+
+    border-radius:50%;
+
+    background:#ff6b00;
+
+    position:fixed;
+
+    pointer-events:none;
+
+    mix-blend-mode:screen;
+
+    z-index:9999;
+
+    filter:blur(5px);
+
+}
+
+
+
+
+
+
+/* =====================================================
+   PAGE TRANSITION
+===================================================== */
+
+
+body {
+
+
+    animation:pageLoad .8s ease;
+
+
+}
+
+
+
+
+@keyframes pageLoad {
+
+
+    from{
+
+        opacity:0;
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+
+
+/* =====================================================
+   JEVIC ESESA PORTFOLIO
+   GLOBAL ANIMATIONS
+===================================================== */
+
+
+
+/* ===============================
+   REVEAL SCROLL
+================================ */
+
+
+.reveal{
+
+    opacity:0;
+
+    transform:translateY(60px);
+
+    transition:
+
+    opacity 1s ease,
+
+    transform 1s ease;
+
+}
+
+
+
+.reveal.active{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+
+
+
+
+
+/* ===============================
+   IMAGE HOVER GLOBAL
+================================ */
+
+
+.image-hover{
+
+    overflow:hidden;
+
+}
+
+
+
+.image-hover img{
+
+    transition:1s cubic-bezier(.2,.8,.2,1);
+
+}
+
+
+
+.image-hover:hover img{
+
+    transform:scale(1.1);
+
+}
+
+
+
+
+
+
+
+/* ===============================
+   FLOATING EFFECT
+================================ */
+
+
+.float-animation{
+
+    animation:floating 5s ease-in-out infinite;
+
+}
+
+
+
+@keyframes floating{
+
+
+0%{
+
+transform:translateY(0);
+
+}
+
+
+50%{
+
+transform:translateY(-20px);
+
+}
+
+
+100%{
+
+transform:translateY(0);
+
+}
+
+
+}
+
+
+
+
+
+
+
+/* ===============================
+   GLOW EFFECT
+================================ */
+
+
+.glow-hover{
+
+    transition:.5s;
+
+}
+
+
+
+.glow-hover:hover{
+
+
+box-shadow:
+
+0 0 50px rgba(255,107,0,.4);
+
+
+border-color:var(--orange);
+
+
+}
+
+
+
+
+
+
+
+/* ===============================
+   BUTTON ANIMATION
+================================ */
+
+
+.btn-primary{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+
+
+.btn-primary::before{
+
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:-100%;
+
+width:100%;
+
+height:100%;
+
+background:
+
+rgba(255,255,255,.25);
+
+transition:.5s;
+
+
+}
+
+
+
+.btn-primary:hover::before{
+
+
+left:100%;
+
+
+}
+
+
+
+
+
+
+
+/* ===============================
+   PAGE LOADER
+================================ */
+
+
+.page-loader{
+
+
+position:fixed;
+
+inset:0;
+
+background:#050505;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+z-index:99999;
+
+
+}
+
+
+
+.loader-circle{
+
+
+width:80px;
+
+height:80px;
+
+border-radius:50%;
+
+border:
+
+3px solid rgba(255,255,255,.1);
+
+
+border-top-color:
+
+var(--orange);
+
+
+animation:
+
+rotateLoader 1s linear infinite;
+
+
+}
+
+
+
+@keyframes rotateLoader{
+
+
+to{
+
+transform:rotate(360deg);
+
+}
+
+
+}
+
+
+
+
+
+
+
+/* ===============================
+   TEXT ANIMATION
+================================ */
+
+
+.text-gradient{
+
+
+background:
+
+linear-gradient(
+
+90deg,
+
+#fff,
+
+var(--orange)
+
+);
+
+
+-webkit-background-clip:text;
+
+color:transparent;
+
+
+}
+
+
+
+
+
+
+
+/* ===============================
+   CARD HOVER
+================================ */
+
+
+.card-hover{
+
+
+transition:.5s;
+
+}
+
+
+
+.card-hover:hover{
+
+
+transform:
+
+translateY(-15px);
+
+
+}
+
+
+
+
+
+/* ===============================
+   MOBILE MENU ANIMATION
+================================ */
+
+
+.menu-toggle span{
+
+
+transition:.4s;
+
+}
+
+
+
+.menu-toggle.active span:nth-child(1){
+
+
+transform:
+
+rotate(45deg)
+
+translateY(8px);
+
+
+}
+
+
+
+.menu-toggle.active span:nth-child(2){
+
+
+opacity:0;
+
+
+}
+
+
+
+.menu-toggle.active span:nth-child(3){
+
+
+transform:
+
+rotate(-45deg)
+
+translateY(-8px);
+
+
+}

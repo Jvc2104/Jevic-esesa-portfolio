@@ -1,0 +1,2390 @@
+/* Texte */
+.tools-title {
+    font-size: 13px;
+    color: #777;
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+
+/* Barre noire */
+.tools-bar {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    background: #111;
+    padding: 10px 14px;
+    border: 4px solid #000;
+    width: max-content;
+    max-width: 100%;
+    flex-wrap: wrap;
+    border-radius: 8px;
+    justify-content: center;
+}
+
+/* Bloc logo */
+.tool-item {
+    position: relative; /* Indispensable pour afficher le nom au-dessus */
+    width: 72px;
+    height: 72px;
+    background: #1d1d1d;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.25s cubic-bezier(0.2, 1, 0.3, 1), z-index 0s;
+}
+
+/* Taille logos */
+.tool-item img {
+    width: 60%;
+    height: auto;
+    max-height: 60%;
+    object-fit: contain;
+}
+
+/* ========================================= */
+/* ANIMATIONS HOVER (Style "Dock Mac")       */
+/* ========================================= */
+
+.tools-bar:hover .tool-item {
+    transform: scale(0.95);
+}
+
+.tools-bar .tool-item:hover {
+    transform: scale(1.4) translateY(-8px);
+    z-index: 10;
+}
+
+/* ========================================= */
+/* TEXTE AU SURVOL (NOM DU LOGO)             */
+/* ========================================= */
+
+.tool-item::after {
+    content: attr(data-name); /* Récupère le texte écrit dans data-name */
+    position: absolute;
+    bottom: 120%; /* Place l'infobulle au-dessus du logo */
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background: rgba(0, 0, 0, 0.9);
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 11px;
+    font-family: sans-serif;
+    border-radius: 4px;
+    white-space: nowrap;
+    pointer-events: none;
+    
+    /* Caché par défaut */
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s ease;
+}
+
+.tool-item:hover::after {
+    /* Apparaît au survol du logo */
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* ========================================= */
+/* RESPONSIVE DESIGN                         */
+/* ========================================= */
+
+@media (max-width: 768px) {
+    .tools-bar {
+        gap: 20px;
+        padding: 10px;
+    }
+    
+    .tool-item {
+        width: 55px;
+        height: 55px;
+    }
+    
+    .tools-bar .tool-item:hover {
+        transform: scale(1.2) translateY(-5px); /* Zoom réduit sur mobile pour éviter les débordements */
+    }
+}
+
+
+/* =====================================================
+   PORTFOLIO CSS - PARTIE 1/3
+   JEVIC ESESA PORTFOLIO
+===================================================== */
+
+
+
+/* =====================================================
+   HERO PORTFOLIO
+===================================================== */
+
+
+.portfolio-hero{
+
+
+    min-height:75vh;
+
+    display:flex;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding-top:150px;
+
+    background:
+
+    radial-gradient(
+    circle at top,
+    rgba(255,107,0,.18),
+    transparent 45%
+    );
+
+
+}
+
+
+
+.portfolio-hero .container{
+
+
+    max-width:900px;
+
+
+}
+
+
+
+
+.portfolio-hero h1{
+
+
+    font-family:"Poppins",sans-serif;
+
+    font-size:65px;
+
+    line-height:1.15;
+
+    margin:30px 0;
+
+
+}
+
+
+
+.portfolio-hero p{
+
+
+    max-width:750px;
+
+    margin:auto;
+
+    color:#aaa;
+
+    font-size:18px;
+
+    line-height:1.8;
+
+
+}
+
+
+
+
+
+
+
+/* =====================================================
+   TITRES DE CATEGORIES
+===================================================== */
+
+
+.category-header{
+
+
+    text-align:center;
+
+    max-width:850px;
+
+    margin:0 auto 80px;
+
+
+}
+
+
+
+.category-header h2{
+
+
+    font-family:"Poppins",sans-serif;
+
+    font-size:45px;
+
+    margin:20px 0;
+
+
+}
+
+
+
+.category-header p{
+
+
+    color:#999;
+
+    line-height:1.8;
+
+
+}
+
+
+
+
+
+
+
+
+/* =====================================================
+   SECTION COMPETENCES LOGICIELS
+===================================================== */
+
+
+.skills-section{
+
+
+    padding:120px 0;
+
+
+}
+
+
+
+
+
+.skills-grid{
+
+
+    display:grid;
+
+    grid-template-columns:repeat(6,1fr);
+
+    gap:25px;
+
+
+}
+
+
+
+
+.skill-card{
+
+
+    background:#111;
+
+    border:1px solid rgba(255,255,255,.1);
+
+    border-radius:25px;
+
+    padding:30px 20px;
+
+    text-align:center;
+
+    transition:.5s;
+
+
+}
+
+
+
+
+.skill-card:hover{
+
+
+    transform:translateY(-12px);
+
+    border-color:#ff6b00;
+
+    box-shadow:
+
+    0 20px 50px rgba(255,107,0,.15);
+
+
+}
+
+
+
+
+
+.skill-logo{
+
+
+    width:80px;
+
+    height:80px;
+
+    margin:auto auto 20px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+
+}
+
+
+
+
+.skill-logo img{
+
+
+    max-width:70px;
+
+    max-height:70px;
+
+    object-fit:contain;
+
+
+}
+
+
+
+
+
+.skill-card h3{
+
+
+    font-family:"Poppins",sans-serif;
+
+    font-size:20px;
+
+    margin-bottom:10px;
+
+
+}
+
+
+
+
+
+.skill-card p{
+
+
+    font-size:14px;
+
+    color:#999;
+
+    line-height:1.5;
+
+
+}
+
+
+
+
+
+
+
+/* ZONE CODE ANIMATION LOGOS */
+
+
+.custom-animation-zone{
+
+
+    margin-top:70px;
+
+    min-height:150px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+
+}
+
+
+
+
+
+
+
+/* =====================================================
+   SYSTEME GENERAL PORTFOLIO
+===================================================== */
+
+
+
+.portfolio-category{
+
+
+    padding:120px 0;
+
+
+}
+
+
+
+
+
+.project-card{
+
+
+    background:#111;
+
+    border:
+
+    1px solid rgba(255,255,255,.1);
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+    transition:.5s;
+
+    position:relative;
+
+
+}
+
+
+
+
+
+.project-card:hover{
+
+
+    transform:translateY(-15px);
+
+    border-color:#ff6b00;
+
+
+}
+
+
+
+
+
+.project-image{
+
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:#151515;
+
+
+}
+
+
+
+
+
+.project-image img{
+
+
+    width:100%;
+
+    height:100%;
+
+    display:block;
+
+    object-fit:cover;
+
+    object-position:center;
+
+    transition:.6s;
+
+
+}
+
+
+
+
+
+.project-card:hover .project-image img{
+
+
+    transform:scale(1.08);
+
+
+}
+
+
+
+
+
+.project-content{
+
+
+    padding:30px;
+
+
+}
+
+
+
+
+
+.project-content h3{
+
+
+    font-family:"Poppins",sans-serif;
+
+    font-size:25px;
+
+    margin-bottom:15px;
+
+
+}
+
+
+
+
+
+.project-content p{
+
+
+    color:#999;
+
+    line-height:1.7;
+
+    font-size:15px;
+
+
+}
+
+
+
+
+
+.project-info{
+
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+    margin:25px 0;
+
+
+}
+
+
+
+
+
+.project-info span{
+
+
+    background:rgba(255,107,0,.12);
+
+    color:#ff6b00;
+
+    padding:7px 15px;
+
+    border-radius:20px;
+
+    font-size:13px;
+
+
+}
+
+
+
+
+
+.project-btn{
+
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    color:white;
+
+    font-weight:600;
+
+    transition:.3s;
+
+
+}
+
+
+
+.project-btn:hover{
+
+
+    color:#ff6b00;
+
+
+}
+
+
+
+
+
+
+
+
+/* =====================================================
+   FORMAT IMAGES
+===================================================== */
+
+
+
+/* Images verticales */
+
+
+.project-card.vertical .project-image{
+
+
+    aspect-ratio:
+
+    3 / 4;
+
+
+}
+
+
+
+
+
+/* Images horizontales */
+
+
+.project-card.horizontal .project-image{
+
+
+    aspect-ratio:
+
+    16 / 9;
+
+
+}
+
+
+
+
+
+/* Images carrées */
+
+
+.project-card.square .project-image{
+
+
+    aspect-ratio:
+
+    1 / 1;
+
+
+}
+
+
+
+
+
+
+
+
+
+/* =====================================================
+   ILLUSTRATION
+===================================================== */
+
+
+.illustration-grid{
+
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(3,1fr);
+
+    gap:35px;
+
+
+}
+
+
+
+
+
+.illustration-grid .horizontal{
+
+
+    grid-column:
+
+    span 2;
+
+
+}
+
+
+
+
+
+
+
+/* =====================================================
+   DIGITAL PAINTING
+===================================================== */
+
+
+
+.digital-grid{
+
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(3,1fr);
+
+    gap:35px;
+
+
+}
+
+
+
+
+
+.digital-grid .horizontal{
+
+
+    grid-column:
+
+    span 2;
+
+
+}
+
+
+
+
+
+
+
+
+/* =====================================================
+   FIN PARTIE 1/3
+===================================================== */
+
+
+/* =====================================================
+   PORTFOLIO CSS - PARTIE 2/3
+===================================================== */
+
+
+
+
+
+
+/* =====================================================
+   STORYBOARD SECTION
+===================================================== */
+
+
+.storyboard-section{
+
+
+    background:#0b0b0b;
+
+
+}
+
+
+
+
+.storyboard-grid{
+
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(3,1fr);
+
+    gap:35px;
+
+
+}
+
+
+
+
+
+.storyboard-card{
+
+
+    position:relative;
+
+
+}
+
+
+
+
+
+.storyboard-card .project-image{
+
+
+    border-radius:25px 25px 0 0;
+
+
+}
+
+
+
+
+
+.scene-number{
+
+
+    position:absolute;
+
+    top:20px;
+
+    left:20px;
+
+    background:#ff6b00;
+
+    color:white;
+
+    padding:8px 18px;
+
+    border-radius:30px;
+
+    font-size:12px;
+
+    font-weight:700;
+
+    letter-spacing:1px;
+
+
+}
+
+
+
+
+
+.storyboard-card:hover .scene-number{
+
+
+    transform:scale(1.05);
+
+
+}
+
+
+
+
+
+.storyboard-grid .horizontal{
+
+
+    grid-column:
+
+    span 2;
+
+
+}
+
+
+
+
+
+
+
+
+/* =====================================================
+   BRANDING BOARD
+===================================================== */
+
+
+
+.branding-section{
+
+
+    padding:120px 0;
+
+
+}
+
+
+
+
+.branding-grid{
+
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(5,1fr);
+
+    gap:25px;
+
+
+}
+
+
+
+
+
+.branding-card{
+
+
+    background:#111;
+
+}
+
+
+
+
+.branding-card .project-image{
+
+
+    aspect-ratio:
+
+    3/4;
+
+
+}
+
+
+
+
+
+.branding-details{
+
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:8px;
+
+    margin:20px 0;
+
+
+}
+
+
+
+
+
+.branding-details span{
+
+
+    border:
+
+    1px solid rgba(255,255,255,.15);
+
+    padding:6px 12px;
+
+    border-radius:20px;
+
+    font-size:12px;
+
+    color:#ccc;
+
+
+}
+
+
+
+
+
+.branding-card:hover{
+
+
+    box-shadow:
+
+    0 25px 60px rgba(255,107,0,.15);
+
+
+}
+
+
+
+
+
+
+
+
+
+/* =====================================================
+   LOGOS PNG SHOWCASE
+===================================================== */
+
+
+.logos-section{
+
+
+    background:#0b0b0b;
+
+    padding:120px 0;
+
+
+}
+
+
+
+
+
+.logos-showcase{
+
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(5,1fr);
+
+    gap:30px;
+
+
+}
+
+
+
+
+
+.logo-card{
+
+
+    background:#111;
+
+    border:
+
+    1px solid rgba(255,255,255,.1);
+
+    border-radius:30px;
+
+    padding:25px;
+
+    text-align:center;
+
+    animation:
+
+    floatingLogo 5s ease-in-out infinite;
+
+    transition:.5s;
+
+
+}
+
+
+
+
+
+.logo-card:nth-child(2){
+
+    animation-delay:1s;
+
+}
+
+
+.logo-card:nth-child(3){
+
+    animation-delay:2s;
+
+}
+
+
+.logo-card:nth-child(4){
+
+    animation-delay:3s;
+
+}
+
+
+.logo-card:nth-child(5){
+
+    animation-delay:4s;
+
+}
+
+
+
+
+
+.logo-card:hover{
+
+
+    transform:
+
+    translateY(-15px)
+
+    rotateY(10deg);
+
+
+    border-color:#ff6b00;
+
+
+}
+
+
+
+
+
+.logo-image{
+
+
+    height:180px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:20px;
+
+    margin-bottom:25px;
+
+
+    background:
+
+    repeating-conic-gradient(
+
+    #181818 0% 25%,
+
+    #111 0% 50%
+
+    )
+
+    50% / 25px 25px;
+
+
+}
+
+
+
+
+.logo-image img{
+
+
+    max-width:130px;
+
+    max-height:130px;
+
+    object-fit:contain;
+
+    transition:.5s;
+
+
+}
+
+
+
+
+
+.logo-card:hover img{
+
+
+    transform:
+
+    scale(1.2)
+
+    rotate(5deg);
+
+
+    filter:
+
+    drop-shadow(
+    0 0 20px #ff6b00
+    );
+
+
+}
+
+
+
+
+
+@keyframes floatingLogo{
+
+
+    0%,100%{
+
+
+        transform:translateY(0);
+
+
+    }
+
+
+
+    50%{
+
+
+        transform:translateY(-15px);
+
+
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+/* =====================================================
+   AFFICHES PUBLICITAIRES
+===================================================== */
+
+
+
+.posters-section{
+
+
+    padding:120px 0;
+
+
+}
+
+
+
+
+
+.posters-grid{
+
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(5,1fr);
+
+    gap:30px;
+
+
+}
+
+
+
+
+
+.poster-card{
+
+
+    background:#111;
+
+}
+
+
+
+
+
+.poster-card .project-image{
+
+
+    aspect-ratio:
+
+    3/4;
+
+    overflow:hidden;
+
+
+}
+
+
+
+
+
+.poster-card img{
+
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+
+}
+
+
+
+
+
+.poster-overlay{
+
+
+    position:absolute;
+
+    bottom:20px;
+
+    left:20px;
+
+
+}
+
+
+
+
+
+.poster-overlay span{
+
+
+    background:#ff6b00;
+
+    color:white;
+
+    padding:8px 15px;
+
+    border-radius:30px;
+
+    font-size:12px;
+
+    font-weight:700;
+
+
+}
+
+
+
+
+
+.poster-card:hover img{
+
+
+    transform:
+
+    scale(1.1);
+
+
+}
+
+
+
+
+
+
+
+
+/* =====================================================
+   IMAGE QUALITY OPTIMISATION
+===================================================== */
+
+
+
+.project-image,
+.logo-image,
+.web-image{
+
+
+    overflow:hidden;
+
+
+}
+
+
+
+
+
+.project-image img,
+.logo-image img,
+.web-image img{
+
+
+    image-rendering:auto;
+
+    backface-visibility:hidden;
+
+
+}
+
+
+
+
+
+
+
+
+/* =====================================================
+   RESPONSIVE PARTIE 2
+===================================================== */
+
+
+@media(max-width:1200px){
+
+
+
+.branding-grid{
+
+
+    grid-template-columns:
+
+    repeat(3,1fr);
+
+
+}
+
+
+
+.logos-showcase{
+
+
+    grid-template-columns:
+
+    repeat(3,1fr);
+
+
+}
+
+
+
+.posters-grid{
+
+
+    grid-template-columns:
+
+    repeat(3,1fr);
+
+
+}
+
+
+}
+
+
+
+
+
+
+@media(max-width:800px){
+
+
+
+.storyboard-grid{
+
+
+    grid-template-columns:
+
+    repeat(1,1fr);
+
+
+}
+
+
+
+.branding-grid{
+
+
+    grid-template-columns:
+
+    repeat(2,1fr);
+
+
+}
+
+
+
+.posters-grid{
+
+
+    grid-template-columns:
+
+    repeat(2,1fr);
+
+
+}
+
+
+
+}
+
+
+
+@media(max-width:600px){
+
+
+
+.branding-grid,
+.logos-showcase,
+.posters-grid{
+
+
+    grid-template-columns:
+
+    1fr;
+
+
+}
+
+
+}
+
+
+
+/* =====================================================
+   FIN PARTIE 2/3
+===================================================== */
+
+
+/* =====================================================
+   PORTFOLIO CSS - PARTIE 3/3
+===================================================== */
+
+
+
+
+
+/* =====================================================
+   WEB DESIGN SECTION
+===================================================== */
+
+
+.webdesign-section{
+
+
+    padding:120px 0;
+
+    background:#0b0b0b;
+
+
+}
+
+
+
+
+.webdesign-grid{
+
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(3,1fr);
+
+    gap:35px;
+
+
+}
+
+
+
+
+
+.web-card{
+
+
+    background:#111;
+
+    border:
+
+    1px solid rgba(255,255,255,.1);
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+    transition:.5s;
+
+
+}
+
+
+
+
+
+.web-card:hover{
+
+
+    transform:translateY(-15px);
+
+    border-color:#ff6b00;
+
+    box-shadow:
+
+    0 25px 60px rgba(0,0,0,.4);
+
+
+}
+
+
+
+
+
+.web-image{
+
+
+    padding:25px;
+
+
+}
+
+
+
+
+
+.web-image img{
+
+
+    width:100%;
+
+    aspect-ratio:1/1;
+
+    object-fit:cover;
+
+    border-radius:20px;
+
+    transition:.6s;
+
+
+}
+
+
+
+
+
+.web-card:hover .web-image img{
+
+
+    transform:scale(1.05);
+
+
+}
+
+
+
+
+
+.web-content{
+
+
+    padding:
+
+    0 30px 35px;
+
+
+}
+
+
+
+
+
+.web-content h3{
+
+
+    font-family:"Poppins",sans-serif;
+
+    font-size:26px;
+
+    margin-bottom:15px;
+
+
+}
+
+
+
+
+
+.web-content p{
+
+
+    color:#999;
+
+    line-height:1.7;
+
+    margin-bottom:25px;
+
+
+}
+
+
+
+
+
+.web-tech{
+
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+    margin-bottom:30px;
+
+
+}
+
+
+
+
+
+.web-tech span{
+
+
+    background:
+
+    rgba(255,107,0,.12);
+
+    color:#ff6b00;
+
+    padding:
+
+    7px 15px;
+
+    border-radius:30px;
+
+    font-size:13px;
+
+
+}
+
+
+
+
+
+
+
+
+
+/* =====================================================
+   PROCESSUS DE TRAVAIL
+===================================================== */
+
+
+
+.process-section{
+
+
+    padding:140px 0;
+
+
+}
+
+
+
+
+.process-grid{
+
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(5,1fr);
+
+    gap:30px;
+
+
+}
+
+
+
+
+
+.process-card{
+
+
+    text-align:center;
+
+    padding:35px 25px;
+
+    background:#111;
+
+    border-radius:30px;
+
+    border:
+
+    1px solid rgba(255,255,255,.1);
+
+    transition:.5s;
+
+
+}
+
+
+
+
+.process-card:hover{
+
+
+    transform:translateY(-12px);
+
+    border-color:#ff6b00;
+
+
+}
+
+
+
+
+
+.process-number{
+
+
+    width:55px;
+
+    height:55px;
+
+    margin:0 auto 25px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:#ff6b00;
+
+    color:white;
+
+    font-weight:800;
+
+
+}
+
+
+
+
+
+.process-card h3{
+
+
+    font-family:"Poppins",sans-serif;
+
+    margin-bottom:15px;
+
+
+}
+
+
+
+
+
+.process-card p{
+
+
+    color:#999;
+
+    font-size:14px;
+
+    line-height:1.6;
+
+
+}
+
+
+
+
+
+
+
+
+/* =====================================================
+   CALL TO ACTION PORTFOLIO
+===================================================== */
+
+
+.portfolio-cta{
+
+
+    padding:120px 0;
+
+    text-align:center;
+
+    background:
+
+    radial-gradient(
+
+    circle,
+
+    rgba(255,107,0,.18),
+
+    transparent 60%
+
+    );
+
+
+}
+
+
+
+
+.portfolio-cta h2{
+
+
+    font-family:"Poppins",sans-serif;
+
+    font-size:50px;
+
+    margin-bottom:25px;
+
+
+}
+
+
+
+
+
+.portfolio-cta p{
+
+
+    max-width:700px;
+
+    margin:auto;
+
+    color:#aaa;
+
+    line-height:1.8;
+
+    margin-bottom:40px;
+
+
+}
+
+
+
+
+
+
+
+
+/* =====================================================
+   FOOTER PORTFOLIO
+===================================================== */
+
+
+.footer{
+
+
+    background:#050505;
+
+    padding:80px 0 30px;
+
+    border-top:
+
+    1px solid rgba(255,255,255,.1);
+
+
+}
+
+
+
+
+
+.footer-grid{
+
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(4,1fr);
+
+    gap:40px;
+
+
+}
+
+
+
+
+
+.footer-logo img{
+
+
+    width:150px;
+
+
+}
+
+
+
+
+
+.footer p{
+
+
+    color:#999;
+
+    line-height:1.7;
+
+
+}
+
+
+
+
+
+.footer h3{
+
+
+    font-family:"Poppins",sans-serif;
+
+    margin-bottom:20px;
+
+
+}
+
+
+
+
+
+.footer ul{
+
+
+    list-style:none;
+
+    padding:0;
+
+
+}
+
+
+
+
+
+.footer ul li{
+
+
+    margin-bottom:12px;
+
+
+}
+
+
+
+
+
+.footer ul li a{
+
+
+    color:#aaa;
+
+    transition:.3s;
+
+
+}
+
+
+
+
+
+.footer ul li a:hover{
+
+
+    color:#ff6b00;
+
+
+}
+
+
+
+
+
+.footer-socials{
+
+
+    display:flex;
+
+    gap:15px;
+
+
+}
+
+
+
+
+
+.footer-socials a{
+
+
+    width:40px;
+
+    height:40px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:#111;
+
+    transition:.4s;
+
+
+}
+
+
+
+
+
+.footer-socials a:hover{
+
+
+    background:#ff6b00;
+
+    transform:translateY(-5px);
+
+
+}
+
+
+
+
+
+.footer-bottom{
+
+
+    margin-top:50px;
+
+    padding-top:25px;
+
+    border-top:
+
+    1px solid rgba(255,255,255,.1);
+
+    text-align:center;
+
+    color:#777;
+
+    font-size:14px;
+
+
+}
+
+
+
+
+
+
+
+
+
+/* =====================================================
+   RESPONSIVE FINAL
+===================================================== */
+
+
+
+@media(max-width:1200px){
+
+
+.skills-grid{
+
+
+grid-template-columns:
+
+repeat(3,1fr);
+
+
+}
+
+
+
+.illustration-grid,
+.digital-grid{
+
+
+grid-template-columns:
+
+repeat(2,1fr);
+
+
+}
+
+
+
+.webdesign-grid{
+
+
+grid-template-columns:
+
+repeat(2,1fr);
+
+
+}
+
+
+
+.process-grid{
+
+
+grid-template-columns:
+
+repeat(3,1fr);
+
+
+}
+
+
+
+.footer-grid{
+
+
+grid-template-columns:
+
+repeat(2,1fr);
+
+
+}
+
+
+
+}
+
+
+
+
+
+
+
+
+@media(max-width:800px){
+
+
+
+.portfolio-hero h1{
+
+
+font-size:42px;
+
+
+}
+
+
+
+.category-header h2{
+
+
+font-size:35px;
+
+
+}
+
+
+
+
+
+.skills-grid,
+.illustration-grid,
+.digital-grid,
+.webdesign-grid,
+.process-grid{
+
+
+grid-template-columns:
+
+1fr;
+
+
+}
+
+
+
+
+
+.footer-grid{
+
+
+grid-template-columns:
+
+1fr;
+
+
+}
+
+
+
+
+
+.portfolio-cta h2{
+
+
+font-size:35px;
+
+
+}
+
+
+
+}
+
+
+
+
+
+
+
+
+@media(max-width:500px){
+
+
+
+.portfolio-hero{
+
+
+padding-top:120px;
+
+
+}
+
+
+
+.portfolio-hero h1{
+
+
+font-size:34px;
+
+
+}
+
+
+
+.project-content{
+
+
+padding:25px;
+
+
+}
+
+
+
+.web-content{
+
+
+padding:
+
+0 20px 25px;
+
+
+}
+
+
+}
+
+
+
+/* =====================================================
+   FIN DU PORTFOLIO CSS COMPLET
+===================================================== */

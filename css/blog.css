@@ -1,0 +1,2780 @@
+/* =====================================================
+   JEVIC ESESA - JOURNAL CREATIF
+   PREMIUM ART DIRECTOR STYLE
+   BLOG.CSS PART 1/4
+===================================================== */
+
+
+/* ================= ROOT ================= */
+
+:root{
+
+    --black:#050505;
+    --dark:#0b0b0b;
+    --card:#111111;
+    --orange:#ff6b00;
+    --white:#ffffff;
+    --gray:#999999;
+    --line:rgba(255,255,255,.12);
+
+}
+
+
+
+/* ================= RESET ================= */
+
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+
+
+body{
+
+    background:var(--black);
+
+    color:var(--white);
+
+    font-family:"Inter",sans-serif;
+
+    overflow-x:hidden;
+
+}
+
+
+
+img{
+
+    width:100%;
+
+    display:block;
+
+}
+
+
+
+a{
+
+    text-decoration:none;
+
+    color:white;
+
+}
+
+
+
+.container{
+
+    width:min(1100px,90%);
+
+    margin:auto;
+
+}
+
+
+
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+
+.header{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:95px;
+
+    background:rgba(5,5,5,.85);
+
+    backdrop-filter:blur(15px);
+
+    border-bottom:1px solid var(--line);
+
+    z-index:1000;
+
+}
+
+
+
+.nav-container{
+
+    height:100%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+}
+
+
+
+.logo img{
+
+    width:150px;
+
+}
+
+
+
+.nav ul{
+
+    display:flex;
+
+    list-style:none;
+
+    gap:45px;
+
+}
+
+
+
+.nav a{
+
+    color:#aaa;
+
+    font-size:15px;
+
+    position:relative;
+
+    transition:.4s;
+
+}
+
+
+
+.nav a::after{
+
+    content:"";
+
+    position:absolute;
+
+    bottom:-10px;
+
+    left:0;
+
+    width:0;
+
+    height:2px;
+
+    background:var(--orange);
+
+    transition:.4s;
+
+}
+
+
+
+.nav a:hover,
+
+.nav a.active{
+
+    color:white;
+
+}
+
+
+
+.nav a:hover::after,
+
+.nav a.active::after{
+
+    width:100%;
+
+}
+
+
+
+.btn-primary{
+
+    background:var(--orange);
+
+    padding:16px 32px;
+
+    border-radius:50px;
+
+    font-weight:600;
+
+    transition:.4s;
+
+}
+
+
+
+.btn-primary:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 20px 50px rgba(255,107,0,.35);
+
+}
+
+
+
+
+
+/* =====================================================
+   HERO JOURNAL
+===================================================== */
+
+
+.journal-hero{
+
+    min-height:100vh;
+
+    position:relative;
+
+    display:flex;
+
+    align-items:center;
+
+    overflow:hidden;
+
+    padding-top:100px;
+
+}
+
+
+
+
+
+.journal-hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:700px;
+
+    height:700px;
+
+    right:-200px;
+
+    top:100px;
+
+    background:var(--orange);
+
+    filter:blur(220px);
+
+    opacity:.18;
+
+}
+
+
+
+
+
+.hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+    width:60%;
+
+}
+
+
+
+
+
+.hero-label{
+
+    color:var(--orange);
+
+    letter-spacing:5px;
+
+    text-transform:uppercase;
+
+    font-size:14px;
+
+}
+
+
+
+
+
+.hero-title{
+
+    margin-top:30px;
+
+    font-family:"Poppins",sans-serif;
+
+    font-size:clamp(70px,10vw,150px);
+
+    line-height:.85;
+
+    text-transform:uppercase;
+
+    letter-spacing:-5px;
+
+}
+
+
+
+.hero-title span{
+
+    color:transparent;
+
+    -webkit-text-stroke:1px white;
+
+}
+
+
+
+
+
+.hero-content p{
+
+    margin-top:45px;
+
+    max-width:550px;
+
+    color:#aaa;
+
+    font-size:20px;
+
+    line-height:1.8;
+
+}
+
+
+
+
+
+.hero-professions{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:15px;
+
+    margin-top:40px;
+
+}
+
+
+
+.hero-professions span{
+
+    padding:12px 25px;
+
+    border:1px solid var(--line);
+
+    border-radius:40px;
+
+    background:rgba(255,255,255,.03);
+
+    transition:.4s;
+
+}
+
+
+
+.hero-professions span:hover{
+
+    background:var(--orange);
+
+    border-color:var(--orange);
+
+    transform:translateY(-5px);
+
+}
+
+
+
+
+
+
+
+/* =====================================================
+   HERO IMAGE
+===================================================== */
+
+
+.hero-image{
+
+    position:absolute;
+
+    right:0;
+
+    bottom:0;
+
+    width:45%;
+
+    height:85vh;
+
+}
+
+
+
+.hero-image::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    linear-gradient(
+
+    90deg,
+
+    var(--black),
+
+    transparent 40%
+
+    );
+
+    z-index:2;
+
+}
+
+
+
+.hero-image img{
+
+    height:100%;
+
+    object-fit:cover;
+
+    border-radius:80px 0 0 0;
+
+    filter:contrast(1.1);
+
+}
+
+
+
+
+
+
+
+/* =====================================================
+   STATS
+===================================================== */
+
+
+.hero-stats{
+
+    position:absolute;
+
+    bottom:50px;
+
+    left:5%;
+
+    display:flex;
+
+    gap:80px;
+
+    z-index:5;
+
+}
+
+
+
+.stat-item strong{
+
+    font-family:"Poppins";
+
+    font-size:65px;
+
+}
+
+
+
+.stat-item span{
+
+    color:#777;
+
+    text-transform:uppercase;
+
+    letter-spacing:3px;
+
+    font-size:12px;
+
+}
+
+
+
+
+
+/* =====================================================
+   FEATURED ARTICLE
+===================================================== */
+
+
+.featured-article{
+
+    padding:180px 0;
+
+}
+
+
+
+
+
+.section-title span{
+
+    color:var(--orange);
+
+    letter-spacing:4px;
+
+    text-transform:uppercase;
+
+    font-size:13px;
+
+}
+
+
+
+.section-title h2{
+
+    margin-top:20px;
+
+    font-family:"Poppins";
+
+    font-size:clamp(45px,6vw,80px);
+
+    text-transform:uppercase;
+
+    letter-spacing:-3px;
+
+}
+
+
+
+
+
+.featured-card{
+
+    margin-top:80px;
+
+    display:grid;
+
+    grid-template-columns:1.4fr .6fr;
+
+    background:var(--dark);
+
+    border:1px solid var(--line);
+
+    border-radius:50px;
+
+    overflow:hidden;
+
+}
+
+
+
+
+
+.featured-image{
+
+    height:700px;
+
+    overflow:hidden;
+
+}
+
+
+
+.featured-image img{
+
+    height:100%;
+
+    object-fit:cover;
+
+    transition:1s;
+
+}
+
+
+
+.featured-card:hover img{
+
+    transform:scale(1.08);
+
+}
+
+
+
+
+
+.featured-content{
+
+    padding:70px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+}
+
+
+
+
+
+.featured-content span{
+
+    color:var(--orange);
+
+    text-transform:uppercase;
+
+    letter-spacing:3px;
+
+}
+
+
+
+.featured-content h3{
+
+    margin:30px 0;
+
+    font-family:"Poppins";
+
+    font-size:45px;
+
+    line-height:1.1;
+
+}
+
+
+
+.featured-content p{
+
+    color:#999;
+
+    line-height:2;
+
+    font-size:17px;
+
+}
+
+
+
+.featured-content a{
+
+    margin-top:40px;
+
+    color:var(--orange);
+
+    font-weight:700;
+
+}
+ /* =====================================================
+   JOURNAL CREATIF
+   BLOG.CSS PART 2/4
+
+   CREATIVE GRID + MASONRY GALLERY
+===================================================== */
+
+
+
+/* =====================================================
+   CREATIVE PROJECT GRID
+===================================================== */
+
+
+.creative-grid-section{
+
+    padding:120px 0 180px;
+
+}
+
+
+
+
+
+.creative-grid{
+
+    margin-top:90px;
+
+    display:grid;
+
+    grid-template-columns:repeat(12,1fr);
+
+    gap:35px;
+
+}
+
+
+
+
+
+.creative-item{
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:#111;
+
+    border-radius:40px;
+
+    min-height:500px;
+
+    cursor:pointer;
+
+}
+
+
+
+
+
+/* GRAND PROJET */
+
+.creative-item.large{
+
+    grid-column:span 7;
+
+    height:750px;
+
+}
+
+
+
+
+
+/* PETIT PROJET */
+
+.creative-item:not(.large):not(.wide){
+
+    grid-column:span 5;
+
+    height:500px;
+
+}
+
+
+
+
+
+/* PROJET LARGE BAS */
+
+.creative-item.wide{
+
+    grid-column:span 12;
+
+    height:650px;
+
+}
+
+
+
+
+
+.creative-item img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    transition:1s cubic-bezier(.2,.8,.2,1);
+
+}
+
+
+
+
+
+.creative-item:hover img{
+
+    transform:scale(1.12);
+
+}
+
+
+
+
+
+.creative-item::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    linear-gradient(
+
+    180deg,
+
+    transparent 40%,
+
+    rgba(0,0,0,.9)
+
+    );
+
+    z-index:1;
+
+}
+
+
+
+
+
+.overlay{
+
+    position:absolute;
+
+    left:45px;
+
+    bottom:45px;
+
+    z-index:2;
+
+}
+
+
+
+
+
+.overlay h3{
+
+    font-family:"Poppins";
+
+    font-size:45px;
+
+    letter-spacing:-2px;
+
+}
+
+
+
+
+
+.overlay::before{
+
+    content:"VIEW PROJECT";
+
+    display:block;
+
+    color:var(--orange);
+
+    font-size:12px;
+
+    letter-spacing:4px;
+
+    margin-bottom:15px;
+
+}
+
+
+
+
+
+
+
+/* EFFET LUMIERE AU SURVOL */
+
+
+
+.creative-item::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:300px;
+
+    height:300px;
+
+    background:var(--orange);
+
+    filter:blur(120px);
+
+    opacity:0;
+
+    transition:.6s;
+
+}
+
+
+
+
+
+.creative-item:hover::after{
+
+    opacity:.35;
+
+}
+
+
+
+
+
+
+
+
+
+/* =====================================================
+   MASONRY GALLERY
+===================================================== */
+
+
+.masonry-gallery{
+
+    padding:150px 0;
+
+    background:#080808;
+
+}
+
+
+
+
+
+.gallery-grid{
+
+    margin-top:80px;
+
+    columns:3;
+
+    column-gap:35px;
+
+}
+
+
+
+
+
+.gallery-grid img{
+
+    width:100%;
+
+    margin-bottom:35px;
+
+    border-radius:35px;
+
+    break-inside:avoid;
+
+    transition:.7s;
+
+    filter:brightness(.9);
+
+}
+
+
+
+
+
+.gallery-grid img:hover{
+
+    transform:
+
+    translateY(-15px)
+
+    scale(1.03);
+
+    filter:brightness(1);
+
+    box-shadow:
+
+    0 40px 80px rgba(0,0,0,.7);
+
+}
+
+
+
+
+
+
+
+/* =====================================================
+   VIDEO SECTION
+===================================================== */
+
+
+.video-section{
+
+    padding:160px 0;
+
+}
+
+
+
+
+
+.video-grid{
+
+    margin-top:80px;
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:35px;
+
+}
+
+
+
+
+
+.video-card{
+
+    position:relative;
+
+    height:600px;
+
+    overflow:hidden;
+
+    border-radius:45px;
+
+}
+
+
+
+
+
+.video-card img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    transition:1s;
+
+}
+
+
+
+
+
+.video-card:hover img{
+
+    transform:scale(1.1);
+
+}
+
+
+
+
+
+.video-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    linear-gradient(
+
+    transparent,
+
+    rgba(0,0,0,.85)
+
+    );
+
+    z-index:1;
+
+}
+
+
+
+
+
+.video-card h3{
+
+    position:absolute;
+
+    left:35px;
+
+    bottom:35px;
+
+    z-index:3;
+
+    font-family:"Poppins";
+
+    font-size:30px;
+
+}
+
+
+
+
+
+.play{
+
+    position:absolute;
+
+    top:50%;
+
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    width:95px;
+
+    height:95px;
+
+    border-radius:50%;
+
+    background:var(--orange);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    z-index:3;
+
+    box-shadow:
+
+    0 0 50px rgba(255,107,0,.5);
+
+    transition:.5s;
+
+}
+
+
+
+
+
+.play i{
+
+    font-size:28px;
+
+}
+
+
+
+
+
+.video-card:hover .play{
+
+    transform:
+
+    translate(-50%,-50%)
+
+    scale(1.15);
+
+}
+
+
+
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+
+@media(max-width:1100px){
+
+
+.creative-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr;
+
+}
+
+
+
+.creative-item.large,
+
+.creative-item.wide,
+
+.creative-item:not(.large):not(.wide){
+
+    grid-column:auto;
+
+    height:550px;
+
+}
+
+
+
+.gallery-grid{
+
+    columns:2;
+
+}
+
+
+
+.video-grid{
+
+    grid-template-columns:1fr 1fr;
+
+}
+
+
+}
+
+
+
+
+
+@media(max-width:700px){
+
+
+
+.creative-item.large,
+
+.creative-item.wide,
+
+.creative-item:not(.large):not(.wide){
+
+    height:420px;
+
+}
+
+
+
+.gallery-grid{
+
+    columns:1;
+
+}
+
+
+
+.video-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+
+
+.overlay h3{
+
+    font-size:30px;
+
+}
+
+
+}
+
+/* =====================================================
+   JOURNAL CREATIF
+   BLOG.CSS PART 3/4
+
+   TIMELINE + TESTIMONIALS + FAQ + CTA
+===================================================== */
+
+
+
+/* =====================================================
+   TIMELINE CREATIVE JOURNEY
+===================================================== */
+
+
+.timeline-section{
+
+    padding:180px 0;
+
+    position:relative;
+
+}
+
+
+
+.timeline-section::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:500px;
+
+    height:500px;
+
+    background:var(--orange);
+
+    opacity:.12;
+
+    filter:blur(180px);
+
+    left:-200px;
+
+    top:30%;
+
+}
+
+
+
+
+
+.timeline{
+
+    position:relative;
+
+    max-width:1100px;
+
+    margin:100px auto 0;
+
+}
+
+
+
+
+
+.timeline::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    bottom:0;
+
+    left:50%;
+
+    width:1px;
+
+    background:linear-gradient(
+
+    transparent,
+
+    var(--orange),
+
+    transparent
+
+    );
+
+}
+
+
+
+
+
+.timeline-item{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    position:relative;
+
+    margin-bottom:120px;
+
+}
+
+
+
+
+
+.timeline-item:nth-child(even){
+
+    justify-content:flex-start;
+
+}
+
+
+
+
+
+.timeline-year{
+
+    position:absolute;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:100px;
+
+    height:100px;
+
+    border-radius:50%;
+
+    background:var(--black);
+
+    border:1px solid var(--orange);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-family:"Poppins";
+
+    font-size:28px;
+
+    z-index:2;
+
+}
+
+
+
+
+
+.timeline-content{
+
+    width:42%;
+
+    padding:45px;
+
+    background:
+
+    linear-gradient(
+
+    145deg,
+
+    #121212,
+
+    #080808
+
+    );
+
+    border:1px solid var(--line);
+
+    border-radius:40px;
+
+    transition:.5s;
+
+}
+
+
+
+
+
+.timeline-content:hover{
+
+    transform:translateY(-10px);
+
+    border-color:var(--orange);
+
+}
+
+
+
+
+
+.timeline-content h3{
+
+    font-family:"Poppins";
+
+    font-size:32px;
+
+    margin-bottom:20px;
+
+}
+
+
+
+
+
+.timeline-content p{
+
+    color:#999;
+
+    line-height:1.9;
+
+}
+
+
+
+
+
+
+
+/* =====================================================
+   TESTIMONIALS
+===================================================== */
+
+
+.review-section{
+
+    padding:160px 0;
+
+    background:#090909;
+
+}
+
+
+
+
+
+.testimonial-slider{
+
+    margin-top:80px;
+
+}
+
+
+
+
+
+.review-card{
+
+    padding:80px;
+
+    background:
+
+    linear-gradient(
+
+    145deg,
+
+    #151515,
+
+    #0c0c0c
+
+    );
+
+    border-radius:50px;
+
+    border:1px solid var(--line);
+
+    text-align:center;
+
+}
+
+
+
+
+
+.review-stars{
+
+    color:var(--orange);
+
+    font-size:25px;
+
+    letter-spacing:8px;
+
+    margin-bottom:35px;
+
+}
+
+
+
+
+
+.review-card p{
+
+    font-family:"Poppins";
+
+    font-size:35px;
+
+    line-height:1.5;
+
+    max-width:900px;
+
+    margin:auto;
+
+}
+
+
+
+
+
+.review-card h3{
+
+    margin-top:45px;
+
+    font-size:22px;
+
+}
+
+
+
+
+
+.review-card span{
+
+    display:block;
+
+    color:var(--orange);
+
+    margin-top:10px;
+
+}
+
+
+
+
+
+.swiper-pagination{
+
+    position:relative!important;
+
+    margin-top:40px;
+
+}
+
+
+
+
+
+.swiper-pagination-bullet{
+
+    width:12px;
+
+    height:12px;
+
+    background:white;
+
+    opacity:.4;
+
+}
+
+
+
+
+
+.swiper-pagination-bullet-active{
+
+    background:var(--orange);
+
+    opacity:1;
+
+}
+
+
+
+
+
+
+
+/* =====================================================
+   FAQ PREMIUM
+===================================================== */
+
+
+.journal-faq{
+
+    padding:170px 0;
+
+}
+
+
+
+
+
+.faq-wrapper{
+
+    max-width:900px;
+
+    margin:80px auto 0;
+
+}
+
+
+
+
+
+.faq-box{
+
+    border-bottom:1px solid var(--line);
+
+}
+
+
+
+
+
+.faq-btn{
+
+    width:100%;
+
+    padding:40px 0;
+
+    background:none;
+
+    border:none;
+
+    color:white;
+
+    font-size:25px;
+
+    font-family:"Poppins";
+
+    display:flex;
+
+    justify-content:space-between;
+
+    cursor:pointer;
+
+    text-align:left;
+
+}
+
+
+
+
+
+.faq-btn i{
+
+    color:var(--orange);
+
+    transition:.4s;
+
+}
+
+
+
+
+
+.faq-content{
+
+    max-height:0;
+
+    overflow:hidden;
+
+    transition:.6s ease;
+
+}
+
+
+
+
+
+.faq-content p{
+
+    color:#999;
+
+    line-height:2;
+
+    padding-bottom:35px;
+
+    max-width:700px;
+
+}
+
+
+
+
+
+.faq-box.active .faq-content{
+
+    max-height:250px;
+
+}
+
+
+
+
+
+.faq-box.active .faq-btn i{
+
+    transform:rotate(45deg);
+
+}
+
+
+
+
+
+
+
+/* =====================================================
+   CTA FINAL
+===================================================== */
+
+
+.journal-cta{
+
+    min-height:80vh;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+
+
+
+
+.journal-cta::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:800px;
+
+    height:800px;
+
+    background:var(--orange);
+
+    filter:blur(250px);
+
+    opacity:.18;
+
+}
+
+
+
+
+
+.journal-cta h2{
+
+    position:relative;
+
+    z-index:2;
+
+    font-family:"Poppins";
+
+    font-size:clamp(55px,8vw,120px);
+
+    line-height:.9;
+
+    text-transform:uppercase;
+
+    letter-spacing:-5px;
+
+}
+
+
+
+
+
+.journal-cta p{
+
+    position:relative;
+
+    z-index:2;
+
+    color:#aaa;
+
+    font-size:20px;
+
+    max-width:650px;
+
+    margin:40px auto;
+
+}
+
+
+
+
+
+.journal-cta .btn-primary{
+
+    position:relative;
+
+    z-index:2;
+
+    display:inline-flex;
+
+    gap:15px;
+
+    align-items:center;
+
+}
+
+
+
+
+
+
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+
+@media(max-width:900px){
+
+
+.timeline::before{
+
+    left:30px;
+
+}
+
+
+
+.timeline-item,
+
+.timeline-item:nth-child(even){
+
+    justify-content:flex-start;
+
+    padding-left:80px;
+
+}
+
+
+
+.timeline-year{
+
+    left:30px;
+
+}
+
+
+
+.timeline-content{
+
+    width:100%;
+
+}
+
+
+
+.review-card{
+
+    padding:45px 25px;
+
+}
+
+
+
+.review-card p{
+
+    font-size:24px;
+
+}
+
+
+
+.faq-btn{
+
+    font-size:20px;
+
+}
+
+
+}
+
+
+
+
+
+@media(max-width:600px){
+
+
+.timeline-content{
+
+    padding:30px;
+
+}
+
+
+
+.timeline-content h3{
+
+    font-size:24px;
+
+}
+
+
+
+.review-card p{
+
+    font-size:20px;
+
+}
+
+
+
+.journal-cta h2{
+
+    letter-spacing:-2px;
+
+}
+
+
+
+}
+/* =====================================================
+   JOURNAL CREATIF
+   BLOG.CSS PART 4/4
+
+   FOOTER + DETAILS PREMIUM + RESPONSIVE FINAL
+===================================================== */
+
+
+
+
+
+/* =====================================================
+   FOOTER PREMIUM
+===================================================== */
+
+
+.footer{
+
+    padding:120px 0 30px;
+
+    background:#030303;
+
+    border-top:1px solid var(--line);
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+
+
+
+
+.footer::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:400px;
+
+    height:400px;
+
+    background:var(--orange);
+
+    opacity:.08;
+
+    filter:blur(150px);
+
+    right:-100px;
+
+    top:0;
+
+}
+
+
+
+
+
+.footer-grid{
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr 1fr 1fr;
+
+    gap:60px;
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+
+
+
+
+.footer-brand img{
+
+    width:170px;
+
+    margin-bottom:30px;
+
+}
+
+
+
+
+
+.footer-brand p{
+
+    color:#888;
+
+    max-width:350px;
+
+    line-height:2;
+
+}
+
+
+
+
+
+.footer-column h3{
+
+    font-family:"Poppins";
+
+    font-size:20px;
+
+    margin-bottom:30px;
+
+}
+
+
+
+
+
+.footer-column{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+
+
+
+
+.footer-column a{
+
+    color:#888;
+
+    transition:.4s;
+
+}
+
+
+
+
+
+.footer-column a:hover{
+
+    color:var(--orange);
+
+    transform:translateX(8px);
+
+}
+
+
+
+
+
+.footer-bottom{
+
+    margin-top:80px;
+
+    padding-top:30px;
+
+    border-top:1px solid var(--line);
+
+    text-align:center;
+
+    color:#666;
+
+}
+
+
+
+
+
+
+
+
+/* =====================================================
+   GLOBAL PREMIUM EFFECTS
+===================================================== */
+
+
+
+::selection{
+
+    background:var(--orange);
+
+    color:white;
+
+}
+
+
+
+
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+
+
+::-webkit-scrollbar-track{
+
+    background:#050505;
+
+}
+
+
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--orange);
+
+    border-radius:20px;
+
+}
+
+
+
+
+
+
+/* IMAGE REVEAL */
+
+.image-reveal{
+
+    overflow:hidden;
+
+    position:relative;
+
+}
+
+
+
+
+
+.image-reveal::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:var(--orange);
+
+    transform:translateX(0);
+
+    animation:revealImage 1.2s ease forwards;
+
+}
+
+
+
+
+
+@keyframes revealImage{
+
+
+to{
+
+    transform:translateX(100%);
+
+}
+
+
+}
+
+
+
+
+
+
+
+/* FLOATING ANIMATION */
+
+
+.floating{
+
+    animation:floating 6s ease-in-out infinite;
+
+}
+
+
+
+
+
+@keyframes floating{
+
+
+0%{
+
+transform:translateY(0);
+
+}
+
+
+50%{
+
+transform:translateY(-20px);
+
+}
+
+
+100%{
+
+transform:translateY(0);
+
+}
+
+
+}
+
+
+
+
+
+
+
+
+/* CURSOR CREATIVE */
+
+
+.cursor{
+
+    width:25px;
+
+    height:25px;
+
+    border-radius:50%;
+
+    background:var(--orange);
+
+    position:fixed;
+
+    pointer-events:none;
+
+    z-index:9999;
+
+    mix-blend-mode:difference;
+
+    transform:translate(-50%,-50%);
+
+}
+
+
+
+
+
+.cursor-follower{
+
+    width:70px;
+
+    height:70px;
+
+    border:1px solid white;
+
+    border-radius:50%;
+
+    position:fixed;
+
+    pointer-events:none;
+
+    z-index:9998;
+
+    transform:translate(-50%,-50%);
+
+}
+
+
+
+
+
+
+
+
+/* =====================================================
+   GENERAL HOVER
+===================================================== */
+
+
+.featured-card,
+
+.creative-item,
+
+.video-card,
+
+.review-card{
+
+    will-change:transform;
+
+}
+
+
+
+
+
+.featured-card:hover,
+
+.review-card:hover{
+
+    border-color:
+
+    rgba(255,107,0,.5);
+
+}
+
+
+
+
+
+
+
+
+/* =====================================================
+   LARGE SCREEN OPTIMIZATION
+===================================================== */
+
+
+@media(min-width:1600px){
+
+
+.container{
+
+    width:1400px;
+
+}
+
+
+
+.hero-title{
+
+    font-size:170px;
+
+}
+
+
+
+.featured-image{
+
+    height:800px;
+
+}
+
+
+}
+
+
+
+
+
+
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+
+@media(max-width:1000px){
+
+
+
+.header{
+
+    height:80px;
+
+}
+
+
+
+.nav{
+
+    display:none;
+
+}
+
+
+
+.hero-content{
+
+    width:100%;
+
+}
+
+
+
+.hero-image{
+
+    position:relative;
+
+    width:100%;
+
+    height:500px;
+
+    margin-top:50px;
+
+}
+
+
+
+.journal-hero{
+
+    flex-direction:column;
+
+    justify-content:center;
+
+}
+
+
+
+.hero-stats{
+
+    position:relative;
+
+    left:auto;
+
+    bottom:auto;
+
+    margin-top:50px;
+
+}
+
+
+
+.featured-card{
+
+    grid-template-columns:1fr;
+
+}
+
+
+
+.featured-image{
+
+    height:500px;
+
+}
+
+
+
+.footer-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+
+}
+
+
+
+
+
+
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+
+@media(max-width:600px){
+
+
+
+.container{
+
+    width:88%;
+
+}
+
+
+
+.hero-title{
+
+    font-size:65px;
+
+    letter-spacing:-3px;
+
+}
+
+
+
+.hero-content p{
+
+    font-size:17px;
+
+}
+
+
+
+.hero-professions span{
+
+    font-size:13px;
+
+}
+
+
+
+.hero-stats{
+
+    gap:30px;
+
+}
+
+
+
+.stat-item strong{
+
+    font-size:40px;
+
+}
+
+
+
+.section-title h2{
+
+    font-size:42px;
+
+}
+
+
+
+.featured-content{
+
+    padding:35px;
+
+}
+
+
+
+.featured-content h3{
+
+    font-size:32px;
+
+}
+
+
+
+.footer-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+
+
+.footer{
+
+    padding-top:80px;
+
+}
+
+
+}
+.process-section{
+
+padding:150px 0;
+
+background:#080808;
+
+}
+
+
+
+.process-grid{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:30px;
+
+margin-top:80px;
+
+}
+
+
+
+.process-card{
+
+background:#111;
+
+border:1px solid rgba(255,255,255,.1);
+
+padding:50px 35px;
+
+border-radius:40px;
+
+transition:.5s;
+
+}
+
+
+
+.process-card span{
+
+color:#ff6b00;
+
+font-size:40px;
+
+font-weight:800;
+
+}
+
+
+
+.process-card h3{
+
+font-size:30px;
+
+margin:25px 0;
+
+font-family:"Poppins";
+
+}
+
+
+
+.process-card p{
+
+color:#999;
+
+line-height:1.8;
+
+}
+
+
+
+.process-card:hover{
+
+transform:translateY(-15px);
+
+border-color:#ff6b00;
+
+}
+
+
+
+@media(max-width:800px){
+
+.process-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+
+
+
