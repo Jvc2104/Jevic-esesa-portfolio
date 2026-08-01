@@ -2383,181 +2383,91 @@ padding:
 ===================================================== */
 
 /* =====================================================
-   SMARTPHONES & IPHONE
-   À ajouter à la fin de portfolio.css
+   FIX SPÉCIAL SMARTPHONES & iPHONES
 ===================================================== */
 
-@media screen and (max-width: 768px) {
-
-    html{
-        overflow-x:hidden;
+/* 1. CORRECTION DES ANIMATIONS SUR ÉCRANS TACTILES (iOS/Android) */
+@media (hover: none) {
+    /* On annule ou adoucit les effets de survol pour éviter qu'ils restent "bloqués" après un clic */
+    
+    /* Barre d'outils (Dock) */
+    .tools-bar .tool-item:hover {
+        transform: scale(1.05); /* Zoom très léger au lieu du gros bond */
+    }
+    .tool-item::after {
+        display: none !important; /* On cache le texte noir (infobulle) qui gêne au clic sur mobile */
     }
 
-    body{
-        overflow-x:hidden;
+    /* Cartes Projets, Compétences et Logos */
+    .project-card:hover,
+    .skill-card:hover,
+    .process-card:hover {
+        transform: translateY(0); /* Annule le saut de la carte au clic */
+        box-shadow: none;
     }
-
-    section{
-        padding:70px 20px;
+    .project-card:hover .project-image img {
+        transform: scale(1); /* Annule le zoom de l'image au clic */
     }
-
-    .container{
-        width:100%;
-        max-width:100%;
-        padding:0 20px;
+    
+    /* Animation des logos 3D */
+    .logo-card:hover {
+        transform: translateY(0) rotateY(0); 
     }
-
-    img{
-        max-width:100%;
-        height:auto;
-        display:block;
+    .logo-card:active {
+        /* L'effet de bordure orange s'active uniquement pendant que le doigt appuie */
+        border-color: #ff6b00; 
     }
-
-    /* HERO */
-
-    .portfolio-hero{
-        min-height:auto;
-        padding:120px 20px 80px;
-        text-align:center;
+    .logo-card:hover img {
+        transform: scale(1);
+        filter: none;
     }
+}
 
-    .portfolio-hero h1{
-        font-size:2.2rem;
-        line-height:1.2;
-    }
-
-    .portfolio-hero p{
-        font-size:1rem;
-        line-height:1.7;
-    }
-
-    /* TITRES */
-
-    .category-header{
-        margin-bottom:50px;
-    }
-
-    .category-header h2{
-        font-size:2rem;
-        line-height:1.3;
-    }
-
-    .category-header p{
-        font-size:1rem;
-    }
-
-    /* GRILLES */
-
-    .skills-grid,
+/* 2. ALIGNEMENT UNIFORME DES GRILLES SUR SMARTPHONE (Max 768px) */
+@media (max-width: 768px) {
+    
+    /* On aligne les illustrations et digital painting sur 1 colonne propre */
     .illustration-grid,
     .digital-grid,
-    .webdesign-grid,
-    .process-grid,
-    .footer-grid{
-        grid-template-columns:1fr !important;
-        gap:25px;
+    .storyboard-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 0 15px; /* Marge pour ne pas coller aux bords de l'iPhone */
     }
 
-    /* CARTES */
-
-    .project-card,
-    .web-card,
-    .skill-card,
-    .process-card{
-        width:100%;
+    /* FIX CRITIQUE : Empêche les éléments .horizontal de casser l'écran sur mobile */
+    .illustration-grid .horizontal,
+    .digital-grid .horizontal,
+    .storyboard-grid .horizontal {
+        grid-column: 1 / -1 !important;
     }
 
-    .project-content,
-    .web-content{
-        padding:20px;
+    /* La grille des compétences s'aligne proprement sur 2 colonnes */
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        padding: 0 15px;
     }
-
-    /* BOUTONS */
-
-    .btn,
-    button{
-        width:100%;
-        text-align:center;
+    
+    /* On s'assure que les images des logos ne débordent pas de leur carte */
+    .skill-logo img {
+        max-width: 50px;
+        max-height: 50px;
     }
-
-    /* CTA */
-
-    .portfolio-cta{
-        padding:70px 20px;
-        text-align:center;
-    }
-
-    .portfolio-cta h2{
-        font-size:2rem;
-    }
-
-    .portfolio-cta p{
-        font-size:1rem;
-    }
-
 }
 
-
-/* iPhone SE, petits Android */
-
-@media screen and (max-width:480px){
-
-    .portfolio-hero{
-        padding-top:110px;
+/* 3. ALIGNEMENT POUR LES TOUT PETITS iPHONES (ex: iPhone SE - Max 428px) */
+@media (max-width: 428px) {
+    /* Pour que ce soit aligné "comme tous les autres", on passe tout en 1 seule colonne centrale */
+    .skills-grid {
+        grid-template-columns: 1fr;
     }
-
-    .portfolio-hero h1{
-        font-size:1.8rem;
+    
+    /* On réduit légèrement la taille de la carte compétence pour l'adapter à 1 colonne */
+    .skill-card {
+        padding: 20px 15px;
+        max-width: 280px;
+        margin: 0 auto; /* Centre la carte */
+        width: 100%;
     }
-
-    .portfolio-hero p{
-        font-size:.95rem;
-    }
-
-    .category-header h2{
-        font-size:1.7rem;
-    }
-
-    .category-header p{
-        font-size:.95rem;
-    }
-
-    .project-content,
-    .web-content{
-        padding:18px;
-    }
-
-    .portfolio-cta h2{
-        font-size:1.7rem;
-    }
-
 }
-
-
-/* Très petits smartphones */
-
-@media screen and (max-width:360px){
-
-    .portfolio-hero h1{
-        font-size:1.5rem;
-    }
-
-    .category-header h2{
-        font-size:1.5rem;
-    }
-
-    .portfolio-cta h2{
-        font-size:1.5rem;
-    }
-
-    section{
-        padding:60px 15px;
-    }
-
-    .container{
-        padding:0 15px;
-    }
-
-}
-
-
