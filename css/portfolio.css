@@ -2480,3 +2480,73 @@ padding:
         width: 100%;
     }
 }
+
+
+/* =====================================================
+   OPTIMISATION SPÉCIFIQUE : TECNO, ITEL & ENTRÉE DE GAMME
+===================================================== */
+
+/* Cibler les écrans étroits (typiques des smartphones d'entrée de gamme - Max 380px) */
+@media (max-width: 380px) {
+    
+    /* 1. OPTIMISATION DES PERFORMANCES (Batterie et RAM) */
+    .logo-card {
+        /* Désactive l'animation flottante continue pour éviter les saccades sur les petits processeurs */
+        animation: none; 
+    }
+    
+    /* 2. GAIN D'ESPACE VITAL (Écrans de 360px) */
+    .portfolio-hero {
+        padding-top: 80px; /* Moins d'espace perdu en haut */
+        min-height: 50vh;
+    }
+    
+    .portfolio-hero h1 {
+        font-size: 26px; /* Évite que le texte ne se coupe ou prenne tout l'écran */
+    }
+    
+    .category-header h2 {
+        font-size: 24px;
+    }
+    
+    /* 3. ALIGNEMENT ET RÉDUCTION DES MARGES */
+    .skills-section, 
+    .portfolio-category, 
+    .process-section,
+    .webdesign-section {
+        padding: 40px 0; /* Réduit drastiquement les grands espaces vides verticaux */
+    }
+    
+    .project-content, 
+    .web-content {
+        padding: 15px; /* Laisse plus de place pour lire le texte sur un écran étroit */
+    }
+    
+    .project-content h3, 
+    .web-content h3 {
+        font-size: 18px;
+    }
+    
+    /* 4. FORCER LA COLONNE UNIQUE BIEN CENTRÉE */
+    .skills-grid,
+    .process-grid,
+    .illustration-grid,
+    .digital-grid,
+    .branding-grid,
+    .posters-grid {
+        grid-template-columns: 1fr !important;
+        gap: 15px;
+        padding: 0 10px; /* Marges latérales minimales pour ne pas toucher le bord du téléphone */
+    }
+
+    /* Ajustement de la barre d'outils pour qu'elle rentre sans déborder */
+    .tools-bar {
+        gap: 10px;
+        padding: 8px;
+    }
+    
+    .tool-item {
+        width: 45px;
+        height: 45px;
+    }
+}
