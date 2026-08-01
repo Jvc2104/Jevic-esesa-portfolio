@@ -92,24 +92,7 @@
 /* RESPONSIVE DESIGN                         */
 /* ========================================= */
 
-@media (max-width: 768px) {/* À RAJOUTER DANS LE BLOC RESPONSIVE : @media (max-width: 768px) */
-
-    /* Centre tout le texte du footer sur mobile */
-    .footer-grid {
-        text-align: center;
-    }
-
-    /* Centre parfaitement les logos des réseaux sociaux */
-    .footer-socials {
-        justify-content: center;
-        margin: 15px auto 0; /* Centre le conteneur lui-même et ajoute un petit espace en haut */
-    }
-    
-    /* Si tu as un logo en image dans le footer, ça le centre aussi */
-    .footer-logo img {
-        margin: 0 auto;
-        display: block;
-    }
+@media (max-width: 768px) {
     .tools-bar {
         gap: 20px;
         padding: 10px;
@@ -2321,8 +2304,9 @@ grid-template-columns:
 
 
 .footer-grid{
-
-
+display: flex;
+justify-content: center
+    
 grid-template-columns:
 
 1fr;
