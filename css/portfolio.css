@@ -1,4 +1,10 @@
-/* Texte */
+/* =====================================================
+   PORTFOLIO CSS - RESPONSIVE FLUIDE & PRECIS
+===================================================== */
+
+/* ========================================= */
+/* BARRE D'OUTILS (TOOLS)
+/* ========================================= */
 .tools-title {
     font-size: 13px;
     color: #777;
@@ -6,26 +12,27 @@
     font-weight: 500;
 }
 
-/* Barre noire */
 .tools-bar {
     display: flex;
     align-items: center;
-    gap: 50px;
+    /* Utilisation de clamp pour un espacement fluide entre mobile et desktop */
+    gap: clamp(15px, 4vw, 50px);
     background: #111;
-    padding: 10px 14px;
+    padding: clamp(10px, 2vw, 14px);
     border: 4px solid #000;
     width: max-content;
     max-width: 100%;
     flex-wrap: wrap;
     border-radius: 8px;
     justify-content: center;
+    margin: 0 auto;
 }
 
-/* Bloc logo */
 .tool-item {
-    position: relative; /* Indispensable pour afficher le nom au-dessus */
-    width: 72px;
-    height: 72px;
+    position: relative;
+    /* Tailles fluides : 50px min, 72px max */
+    width: clamp(50px, 8vw, 72px);
+    height: clamp(50px, 8vw, 72px);
     background: #1d1d1d;
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 6px;
@@ -35,7 +42,6 @@
     transition: transform 0.25s cubic-bezier(0.2, 1, 0.3, 1), z-index 0s;
 }
 
-/* Taille logos */
 .tool-item img {
     width: 60%;
     height: auto;
@@ -43,27 +49,10 @@
     object-fit: contain;
 }
 
-/* ========================================= */
-/* ANIMATIONS HOVER (Style "Dock Mac")       */
-/* ========================================= */
-
-.tools-bar:hover .tool-item {
-    transform: scale(0.95);
-}
-
-.tools-bar .tool-item:hover {
-    transform: scale(1.4) translateY(-8px);
-    z-index: 10;
-}
-
-/* ========================================= */
-/* TEXTE AU SURVOL (NOM DU LOGO)             */
-/* ========================================= */
-
 .tool-item::after {
-    content: attr(data-name); /* Récupère le texte écrit dans data-name */
+    content: attr(data-name);
     position: absolute;
-    bottom: 120%; /* Place l'infobulle au-dessus du logo */
+    bottom: 120%;
     left: 50%;
     transform: translateX(-50%) translateY(10px);
     background: rgba(0, 0, 0, 0.9);
@@ -74,2317 +63,422 @@
     border-radius: 4px;
     white-space: nowrap;
     pointer-events: none;
-    
-    /* Caché par défaut */
     opacity: 0;
     visibility: hidden;
     transition: all 0.2s ease;
 }
 
-.tool-item:hover::after {
-    /* Apparaît au survol du logo */
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(-50%) translateY(0);
+/* ========================================= */
+/* HERO SECTION
+/* ========================================= */
+.portfolio-hero {
+    min-height: 75vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    /* Padding dynamique : 100px min, 150px max */
+    padding-top: clamp(100px, 15vh, 150px);
+    background: radial-gradient(circle at top, rgba(255,107,0,.18), transparent 45%);
+}
+
+.portfolio-hero .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.portfolio-hero h1 {
+    font-family: "Poppins", sans-serif;
+    /* Typographie fluide : 32px min, 65px max */
+    font-size: clamp(32px, 5vw + 1rem, 65px);
+    line-height: 1.15;
+    margin: 30px 0;
+}
+
+.portfolio-hero p {
+    max-width: 750px;
+    margin: auto;
+    color: #aaa;
+    font-size: clamp(16px, 2vw, 18px);
+    line-height: 1.8;
 }
 
 /* ========================================= */
-/* RESPONSIVE DESIGN                         */
+/* TITRES DE CATEGORIES
 /* ========================================= */
-
-@media (max-width: 768px) {
-    .tools-bar {
-        gap: 20px;
-        padding: 10px;
-    }
-    
-    .tool-item {
-        width: 55px;
-        height: 55px;
-    }
-    
-    .tools-bar .tool-item:hover {
-        transform: scale(1.2) translateY(-5px); /* Zoom réduit sur mobile pour éviter les débordements */
-    }
-}
-
-
-/* =====================================================
-   PORTFOLIO CSS - PARTIE 1/3
-   JEVIC ESESA PORTFOLIO
-===================================================== */
-
-
-
-/* =====================================================
-   HERO PORTFOLIO
-===================================================== */
-
-
-.portfolio-hero{
-
-
-    min-height:75vh;
-
-    display:flex;
-
-    align-items:center;
-
-    text-align:center;
-
-    padding-top:150px;
-
-    background:
-
-    radial-gradient(
-    circle at top,
-    rgba(255,107,0,.18),
-    transparent 45%
-    );
-
-
-}
-
-
-
-.portfolio-hero .container{
-
-
-    max-width:900px;
-
-
-}
-
-
-
-
-.portfolio-hero h1{
-
-
-    font-family:"Poppins",sans-serif;
-
-    font-size:65px;
-
-    line-height:1.15;
-
-    margin:30px 0;
-
-
-}
-
-
-
-.portfolio-hero p{
-
-
-    max-width:750px;
-
-    margin:auto;
-
-    color:#aaa;
-
-    font-size:18px;
-
-    line-height:1.8;
-
-
-}
-
-
-
-
-
-
-
-/* =====================================================
-   TITRES DE CATEGORIES
-===================================================== */
-
-
-.category-header{
-
-
-    text-align:center;
-
-    max-width:850px;
-
-    margin:0 auto 80px;
-
-
-}
-
-
-
-.category-header h2{
-
-
-    font-family:"Poppins",sans-serif;
-
-    font-size:45px;
-
-    margin:20px 0;
-
-
-}
-
-
-
-.category-header p{
-
-
-    color:#999;
-
-    line-height:1.8;
-
-
-}
-
-
-
-
-
-
-
-
-/* =====================================================
-   SECTION COMPETENCES LOGICIELS
-===================================================== */
-
-
-.skills-section{
-
-
-    padding:120px 0;
-
-
-}
-
-
-
-
-
-.skills-grid{
-
-
-    display:grid;
-
-    grid-template-columns:repeat(6,1fr);
-
-    gap:25px;
-
-
-}
-
-
-
-
-.skill-card{
-
-
-    background:#111;
-
-    border:1px solid rgba(255,255,255,.1);
-
-    border-radius:25px;
-
-    padding:30px 20px;
-
-    text-align:center;
-
-    transition:.5s;
-
-
-}
-
-
-
-
-.skill-card:hover{
-
-
-    transform:translateY(-12px);
-
-    border-color:#ff6b00;
-
-    box-shadow:
-
-    0 20px 50px rgba(255,107,0,.15);
-
-
-}
-
-
-
-
-
-.skill-logo{
-
-
-    width:80px;
-
-    height:80px;
-
-    margin:auto auto 20px;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-
-}
-
-
-
-
-.skill-logo img{
-
-
-    max-width:70px;
-
-    max-height:70px;
-
-    object-fit:contain;
-
-
-}
-
-
-
-
-
-.skill-card h3{
-
-
-    font-family:"Poppins",sans-serif;
-
-    font-size:20px;
-
-    margin-bottom:10px;
-
-
-}
-
-
-
-
-
-.skill-card p{
-
-
-    font-size:14px;
-
-    color:#999;
-
-    line-height:1.5;
-
-
-}
-
-
-
-
-
-
-
-/* ZONE CODE ANIMATION LOGOS */
-
-
-.custom-animation-zone{
-
-
-    margin-top:70px;
-
-    min-height:150px;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-
-}
-
-
-
-
-
-
-
-/* =====================================================
-   SYSTEME GENERAL PORTFOLIO
-===================================================== */
-
-
-
-.portfolio-category{
-
-
-    padding:120px 0;
-
-
-}
-
-
-
-
-
-.project-card{
-
-
-    background:#111;
-
-    border:
-
-    1px solid rgba(255,255,255,.1);
-
-    border-radius:30px;
-
-    overflow:hidden;
-
-    transition:.5s;
-
-    position:relative;
-
-
-}
-
-
-
-
-
-.project-card:hover{
-
-
-    transform:translateY(-15px);
-
-    border-color:#ff6b00;
-
-
-}
-
-
-
-
-
-.project-image{
-
-
-    position:relative;
-
-    overflow:hidden;
-
-    background:#151515;
-
-
-}
-
-
-
-
-
-.project-image img{
-
-
-    width:100%;
-
-    height:100%;
-
-    display:block;
-
-    object-fit:cover;
-
-    object-position:center;
-
-    transition:.6s;
-
-
-}
-
-
-
-
-
-.project-card:hover .project-image img{
-
-
-    transform:scale(1.08);
-
-
-}
-
-
-
-
-
-.project-content{
-
-
-    padding:30px;
-
-
-}
-
-
-
-
-
-.project-content h3{
-
-
-    font-family:"Poppins",sans-serif;
-
-    font-size:25px;
-
-    margin-bottom:15px;
-
-
-}
-
-
-
-
-
-.project-content p{
-
-
-    color:#999;
-
-    line-height:1.7;
-
-    font-size:15px;
-
-
-}
-
-
-
-
-
-.project-info{
-
-
-    display:flex;
-
-    flex-wrap:wrap;
-
-    gap:10px;
-
-    margin:25px 0;
-
-
-}
-
-
-
-
-
-.project-info span{
-
-
-    background:rgba(255,107,0,.12);
-
-    color:#ff6b00;
-
-    padding:7px 15px;
-
-    border-radius:20px;
-
-    font-size:13px;
-
-
-}
-
-
-
-
-
-.project-btn{
-
-
-    display:inline-flex;
-
-    align-items:center;
-
-    gap:10px;
-
-    color:white;
-
-    font-weight:600;
-
-    transition:.3s;
-
-
-}
-
-
-
-.project-btn:hover{
-
-
-    color:#ff6b00;
-
-
-}
-
-
-
-
-
-
-
-
-/* =====================================================
-   FORMAT IMAGES
-===================================================== */
-
-
-
-/* Images verticales */
-
-
-.project-card.vertical .project-image{
-
-
-    aspect-ratio:
-
-    3 / 4;
-
-
-}
-
-
-
-
-
-/* Images horizontales */
-
-
-.project-card.horizontal .project-image{
-
-
-    aspect-ratio:
-
-    16 / 9;
-
-
-}
-
-
-
-
-
-/* Images carrées */
-
-
-.project-card.square .project-image{
-
-
-    aspect-ratio:
-
-    1 / 1;
-
-
-}
-
-
-
-
-
-
-
-
-
-/* =====================================================
-   ILLUSTRATION
-===================================================== */
-
-
-.illustration-grid{
-
-
-    display:grid;
-
-    grid-template-columns:
-
-    repeat(3,1fr);
-
-    gap:35px;
-
-
-}
-
-
-
-
-
-.illustration-grid .horizontal{
-
-
-    grid-column:
-
-    span 2;
-
-
-}
-
-
-
-
-
-
-
-/* =====================================================
-   DIGITAL PAINTING
-===================================================== */
-
-
-
-.digital-grid{
-
-
-    display:grid;
-
-    grid-template-columns:
-
-    repeat(3,1fr);
-
-    gap:35px;
-
-
-}
-
-
-
-
-
-.digital-grid .horizontal{
-
-
-    grid-column:
-
-    span 2;
-
-
-}
-
-
-
-
-
-
-
-
-/* =====================================================
-   FIN PARTIE 1/3
-===================================================== */
-
-
-/* =====================================================
-   PORTFOLIO CSS - PARTIE 2/3
-===================================================== */
-
-
-
-
-
-
-/* =====================================================
-   STORYBOARD SECTION
-===================================================== */
-
-
-.storyboard-section{
-
-
-    background:#0b0b0b;
-
-
-}
-
-
-
-
-.storyboard-grid{
-
-
-    display:grid;
-
-    grid-template-columns:
-
-    repeat(3,1fr);
-
-    gap:35px;
-
-
-}
-
-
-
-
-
-.storyboard-card{
-
-
-    position:relative;
-
-
-}
-
-
-
-
-
-.storyboard-card .project-image{
-
-
-    border-radius:25px 25px 0 0;
-
-
-}
-
-
-
-
-
-.scene-number{
-
-
-    position:absolute;
-
-    top:20px;
-
-    left:20px;
-
-    background:#ff6b00;
-
-    color:white;
-
-    padding:8px 18px;
-
-    border-radius:30px;
-
-    font-size:12px;
-
-    font-weight:700;
-
-    letter-spacing:1px;
-
-
-}
-
-
-
-
-
-.storyboard-card:hover .scene-number{
-
-
-    transform:scale(1.05);
-
-
-}
-
-
-
-
-
-.storyboard-grid .horizontal{
-
-
-    grid-column:
-
-    span 2;
-
-
-}
-
-
-
-
-
-
-
-
-/* =====================================================
-   BRANDING BOARD
-===================================================== */
-
-
-
-.branding-section{
-
-
-    padding:120px 0;
-
-
-}
-
-
-
-
-.branding-grid{
-
-
-    display:grid;
-
-    grid-template-columns:
-
-    repeat(5,1fr);
-
-    gap:25px;
-
-
-}
-
-
-
-
-
-.branding-card{
-
-
-    background:#111;
-
-}
-
-
-
-
-.branding-card .project-image{
-
-
-    aspect-ratio:
-
-    3/4;
-
-
-}
-
-
-
-
-
-.branding-details{
-
-
-    display:flex;
-
-    flex-wrap:wrap;
-
-    gap:8px;
-
-    margin:20px 0;
-
-
-}
-
-
-
-
-
-.branding-details span{
-
-
-    border:
-
-    1px solid rgba(255,255,255,.15);
-
-    padding:6px 12px;
-
-    border-radius:20px;
-
-    font-size:12px;
-
-    color:#ccc;
-
-
-}
-
-
-
-
-
-.branding-card:hover{
-
-
-    box-shadow:
-
-    0 25px 60px rgba(255,107,0,.15);
-
-
-}
-
-
-
-
-
-
-
-
-
-/* =====================================================
-   LOGOS PNG SHOWCASE
-===================================================== */
-
-
-.logos-section{
-
-
-    background:#0b0b0b;
-
-    padding:120px 0;
-
-
-}
-
-
-
-
-
-.logos-showcase{
-
-
-    display:grid;
-
-    grid-template-columns:
-
-    repeat(5,1fr);
-
-    gap:30px;
-
-
-}
-
-
-
-
-
-.logo-card{
-
-
-    background:#111;
-
-    border:
-
-    1px solid rgba(255,255,255,.1);
-
-    border-radius:30px;
-
-    padding:25px;
-
-    text-align:center;
-
-    animation:
-
-    floatingLogo 5s ease-in-out infinite;
-
-    transition:.5s;
-
-
-}
-
-
-
-
-
-.logo-card:nth-child(2){
-
-    animation-delay:1s;
-
-}
-
-
-.logo-card:nth-child(3){
-
-    animation-delay:2s;
-
-}
-
-
-.logo-card:nth-child(4){
-
-    animation-delay:3s;
-
-}
-
-
-.logo-card:nth-child(5){
-
-    animation-delay:4s;
-
-}
-
-
-
-
-
-.logo-card:hover{
-
-
-    transform:
-
-    translateY(-15px)
-
-    rotateY(10deg);
-
-
-    border-color:#ff6b00;
-
-
-}
-
-
-
-
-
-.logo-image{
-
-
-    height:180px;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    border-radius:20px;
-
-    margin-bottom:25px;
-
-
-    background:
-
-    repeating-conic-gradient(
-
-    #181818 0% 25%,
-
-    #111 0% 50%
-
-    )
-
-    50% / 25px 25px;
-
-
-}
-
-
-
-
-.logo-image img{
-
-
-    max-width:130px;
-
-    max-height:130px;
-
-    object-fit:contain;
-
-    transition:.5s;
-
-
-}
-
-
-
-
-
-.logo-card:hover img{
-
-
-    transform:
-
-    scale(1.2)
-
-    rotate(5deg);
-
-
-    filter:
-
-    drop-shadow(
-    0 0 20px #ff6b00
-    );
-
-
-}
-
-
-
-
-
-@keyframes floatingLogo{
-
-
-    0%,100%{
-
-
-        transform:translateY(0);
-
-
-    }
-
-
-
-    50%{
-
-
-        transform:translateY(-15px);
-
-
-    }
-
-
-}
-
-
-
-
-
-
-
-
-
-/* =====================================================
-   AFFICHES PUBLICITAIRES
-===================================================== */
-
-
-
-.posters-section{
-
-
-    padding:120px 0;
-
-
-}
-
-
-
-
-
-.posters-grid{
-
-
-    display:grid;
-
-    grid-template-columns:
-
-    repeat(5,1fr);
-
-    gap:30px;
-
-
-}
-
-
-
-
-
-.poster-card{
-
-
-    background:#111;
-
-}
-
-
-
-
-
-.poster-card .project-image{
-
-
-    aspect-ratio:
-
-    3/4;
-
-    overflow:hidden;
-
-
-}
-
-
-
-
-
-.poster-card img{
-
-
-    width:100%;
-
-    height:100%;
-
-    object-fit:cover;
-
-
-}
-
-
-
-
-
-.poster-overlay{
-
-
-    position:absolute;
-
-    bottom:20px;
-
-    left:20px;
-
-
-}
-
-
-
-
-
-.poster-overlay span{
-
-
-    background:#ff6b00;
-
-    color:white;
-
-    padding:8px 15px;
-
-    border-radius:30px;
-
-    font-size:12px;
-
-    font-weight:700;
-
-
-}
-
-
-
-
-
-.poster-card:hover img{
-
-
-    transform:
-
-    scale(1.1);
-
-
-}
-
-
-
-
-
-
-
-
-/* =====================================================
-   IMAGE QUALITY OPTIMISATION
-===================================================== */
-
-
-
-.project-image,
-.logo-image,
-.web-image{
-
-
-    overflow:hidden;
-
-
-}
-
-
-
-
-
-.project-image img,
-.logo-image img,
-.web-image img{
-
-
-    image-rendering:auto;
-
-    backface-visibility:hidden;
-
-
-}
-
-
-
-
-
-
-
-
-/* =====================================================
-   RESPONSIVE PARTIE 2
-===================================================== */
-
-
-@media(max-width:1200px){
-
-
-
-.branding-grid{
-
-
-    grid-template-columns:
-
-    repeat(3,1fr);
-
-
-}
-
-
-
-.logos-showcase{
-
-
-    grid-template-columns:
-
-    repeat(3,1fr);
-
-
-}
-
-
-
-.posters-grid{
-
-
-    grid-template-columns:
-
-    repeat(3,1fr);
-
-
-}
-
-
-}
-
-
-
-
-
-
-@media(max-width:800px){
-
-
-
-.storyboard-grid{
-
-
-    grid-template-columns:
-
-    repeat(1,1fr);
-
-
-}
-
-
-
-.branding-grid{
-
-
-    grid-template-columns:
-
-    repeat(2,1fr);
-
-
-}
-
-
-
-.posters-grid{
-
-
-    grid-template-columns:
-
-    repeat(2,1fr);
-
-
+.category-header {
+    text-align: center;
+    max-width: 850px;
+    margin: 0 auto clamp(40px, 8vw, 80px);
+    padding: 0 20px;
+}
+
+.category-header h2 {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(30px, 4vw, 45px);
+    margin: 20px 0;
+}
+
+.category-header p {
+    color: #999;
+    line-height: 1.8;
+    font-size: clamp(15px, 2vw, 16px);
+}
+
+/* ========================================= */
+/* SECTIONS GENERALES (Paddings fluides)
+/* ========================================= */
+.skills-section,
+.portfolio-category,
+.branding-section,
+.logos-section,
+.posters-section,
+.webdesign-section,
+.portfolio-cta {
+    padding: clamp(60px, 10vw, 120px) 20px;
+}
+
+.process-section {
+    padding: clamp(80px, 12vw, 140px) 20px;
+}
+
+/* ========================================= */
+/* GRILLES DE BASE (Desktop First)
+/* ========================================= */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: clamp(15px, 3vw, 25px);
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.illustration-grid, 
+.digital-grid,
+.storyboard-grid,
+.webdesign-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(20px, 3vw, 35px);
+    max-width: 1400px;
+    margin: 0 auto;
 }
-
-
-
-}
-
-
-
-@media(max-width:600px){
-
-
 
 .branding-grid,
 .logos-showcase,
-.posters-grid{
-
-
-    grid-template-columns:
-
-    1fr;
-
-
+.posters-grid,
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: clamp(20px, 3vw, 30px);
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
-
+/* ========================================= */
+/* ELEMENTS & CARTES
+/* ========================================= */
+.skill-card {
+    background: #111;
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 25px;
+    padding: clamp(20px, 3vw, 30px) 20px;
+    text-align: center;
+    transition: 0.5s;
 }
 
-
-
-/* =====================================================
-   FIN PARTIE 2/3
-===================================================== */
-
-
-/* =====================================================
-   PORTFOLIO CSS - PARTIE 3/3
-===================================================== */
-
-
-
-
-
-/* =====================================================
-   WEB DESIGN SECTION
-===================================================== */
-
-
-.webdesign-section{
-
-
-    padding:120px 0;
-
-    background:#0b0b0b;
-
-
+.skill-logo {
+    width: clamp(60px, 8vw, 80px);
+    height: clamp(60px, 8vw, 80px);
+    margin: auto auto 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-
-
-
-.webdesign-grid{
-
-
-    display:grid;
-
-    grid-template-columns:
-
-    repeat(3,1fr);
-
-    gap:35px;
-
-
+.skill-logo img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
 }
 
-
-
-
-
-.web-card{
-
-
-    background:#111;
-
-    border:
-
-    1px solid rgba(255,255,255,.1);
-
-    border-radius:30px;
-
-    overflow:hidden;
-
-    transition:.5s;
-
-
+.skill-card h3 {
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+    margin-bottom: 10px;
 }
 
-
-
-
-
-.web-card:hover{
-
-
-    transform:translateY(-15px);
-
-    border-color:#ff6b00;
-
-    box-shadow:
-
-    0 25px 60px rgba(0,0,0,.4);
-
-
+.skill-card p {
+    font-size: 14px;
+    color: #999;
+    line-height: 1.5;
 }
 
-
-
-
-
-.web-image{
-
-
-    padding:25px;
-
-
+/* Projets */
+.project-card, .web-card {
+    background: #111;
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 30px;
+    overflow: hidden;
+    transition: 0.5s;
+    position: relative;
 }
 
-
-
-
-
-.web-image img{
-
-
-    width:100%;
-
-    aspect-ratio:1/1;
-
-    object-fit:cover;
-
-    border-radius:20px;
-
-    transition:.6s;
-
-
+.project-image, .logo-image, .web-image {
+    position: relative;
+    overflow: hidden;
+    background: #151515;
 }
 
-
-
-
-
-.web-card:hover .web-image img{
-
-
-    transform:scale(1.05);
-
-
+.project-image img, .logo-image img, .web-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    transition: 0.6s;
+    image-rendering: auto;
+    backface-visibility: hidden;
 }
 
-
-
-
-
-.web-content{
-
-
-    padding:
-
-    0 30px 35px;
-
-
+.project-content, .web-content {
+    padding: clamp(20px, 4vw, 30px);
 }
 
-
-
-
-
-.web-content h3{
-
-
-    font-family:"Poppins",sans-serif;
-
-    font-size:26px;
-
-    margin-bottom:15px;
-
-
+.project-content h3, .web-content h3 {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(20px, 3vw, 26px);
+    margin-bottom: 15px;
 }
 
-
-
-
-
-.web-content p{
-
-
-    color:#999;
-
-    line-height:1.7;
-
-    margin-bottom:25px;
-
-
+.project-content p, .web-content p {
+    color: #999;
+    line-height: 1.7;
+    font-size: clamp(14px, 2vw, 15px);
 }
 
-
-
-
-
-.web-tech{
-
-
-    display:flex;
-
-    flex-wrap:wrap;
-
-    gap:10px;
-
-    margin-bottom:30px;
-
-
+.project-info, .web-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px 0;
 }
 
-
-
-
-
-.web-tech span{
-
-
-    background:
-
-    rgba(255,107,0,.12);
-
-    color:#ff6b00;
-
-    padding:
-
-    7px 15px;
-
-    border-radius:30px;
-
-    font-size:13px;
-
-
+.project-info span, .web-tech span {
+    background: rgba(255,107,0,.12);
+    color: #ff6b00;
+    padding: 7px 15px;
+    border-radius: 20px;
+    font-size: 13px;
 }
 
-
-
-
-
-
-
-
-
-/* =====================================================
-   PROCESSUS DE TRAVAIL
-===================================================== */
-
-
-
-.process-section{
-
-
-    padding:140px 0;
-
-
+.project-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    font-weight: 600;
+    transition: 0.3s;
 }
 
+/* Aspect Ratios */
+.project-card.vertical .project-image { aspect-ratio: 3 / 4; }
+.project-card.horizontal .project-image { aspect-ratio: 16 / 9; }
+.project-card.square .project-image { aspect-ratio: 1 / 1; }
+.branding-card .project-image, .poster-card .project-image { aspect-ratio: 3 / 4; }
+.web-image img { aspect-ratio: 1 / 1; border-radius: 20px; }
+.web-image { padding: 25px; }
 
-
-
-.process-grid{
-
-
-    display:grid;
-
-    grid-template-columns:
-
-    repeat(5,1fr);
-
-    gap:30px;
-
-
+/* Storyboard & Elements Spécifiques */
+.storyboard-section, .logos-section, .webdesign-section { background: #0b0b0b; }
+.storyboard-card .project-image { border-radius: 25px 25px 0 0; }
+.scene-number {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: #ff6b00;
+    color: white;
+    padding: 8px 18px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    z-index: 2;
+    transition: transform 0.3s ease;
 }
 
-
-
-
-
-.process-card{
-
-
-    text-align:center;
-
-    padding:35px 25px;
-
-    background:#111;
-
-    border-radius:30px;
-
-    border:
-
-    1px solid rgba(255,255,255,.1);
-
-    transition:.5s;
-
-
+.illustration-grid .horizontal, 
+.digital-grid .horizontal, 
+.storyboard-grid .horizontal {
+    grid-column: span 2;
 }
 
-
-
-
-.process-card:hover{
-
-
-    transform:translateY(-12px);
-
-    border-color:#ff6b00;
-
-
+/* Logos & Animations */
+.logo-card {
+    background: #111;
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 30px;
+    padding: 25px;
+    text-align: center;
+    animation: floatingLogo 5s ease-in-out infinite;
+    transition: 0.5s;
 }
 
+.logo-card:nth-child(2) { animation-delay: 1s; }
+.logo-card:nth-child(3) { animation-delay: 2s; }
+.logo-card:nth-child(4) { animation-delay: 3s; }
+.logo-card:nth-child(5) { animation-delay: 4s; }
 
-
-
-
-.process-number{
-
-
-    width:55px;
-
-    height:55px;
-
-    margin:0 auto 25px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    border-radius:50%;
-
-    background:#ff6b00;
-
-    color:white;
-
-    font-weight:800;
-
-
+.logo-image {
+    height: clamp(140px, 15vw, 180px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    margin-bottom: 25px;
+    background: repeating-conic-gradient(#181818 0% 25%, #111 0% 50%) 50% / 25px 25px;
 }
 
-
-
-
-
-.process-card h3{
-
-
-    font-family:"Poppins",sans-serif;
-
-    margin-bottom:15px;
-
-
+.logo-image img {
+    max-width: clamp(90px, 10vw, 130px);
+    max-height: clamp(90px, 10vw, 130px);
+    object-fit: contain;
+    transition: 0.5s;
 }
 
-
-
-
-
-.process-card p{
-
-
-    color:#999;
-
-    font-size:14px;
-
-    line-height:1.6;
-
-
+@keyframes floatingLogo {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
 }
 
-
-
-
-
-
-
-
-/* =====================================================
-   CALL TO ACTION PORTFOLIO
-===================================================== */
-
-
-.portfolio-cta{
-
-
-    padding:120px 0;
-
-    text-align:center;
-
-    background:
-
-    radial-gradient(
-
-    circle,
-
-    rgba(255,107,0,.18),
-
-    transparent 60%
-
-    );
-
-
+/* Processus */
+.process-card {
+    text-align: center;
+    padding: clamp(20px, 3vw, 35px) 25px;
+    background: #111;
+    border-radius: 30px;
+    border: 1px solid rgba(255,255,255,.1);
+    transition: 0.5s;
 }
 
-
-
-
-.portfolio-cta h2{
-
-
-    font-family:"Poppins",sans-serif;
-
-    font-size:50px;
-
-    margin-bottom:25px;
-
-
+.process-number {
+    width: 55px;
+    height: 55px;
+    margin: 0 auto 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #ff6b00;
+    color: white;
+    font-weight: 800;
 }
 
-
-
-
-
-.portfolio-cta p{
-
-
-    max-width:700px;
-
-    margin:auto;
-
-    color:#aaa;
-
-    line-height:1.8;
-
-    margin-bottom:40px;
-
-
+/* CTA */
+.portfolio-cta h2 {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(32px, 5vw, 50px);
+    margin-bottom: 25px;
 }
 
-
-
-
-
-
-
-
-/* =====================================================
-   FOOTER PORTFOLIO
-===================================================== */
-
-
-.footer{
-
-
-    background:#050505;
-
-    padding:80px 0 30px;
-
-    border-top:
-
-    1px solid rgba(255,255,255,.1);
-
-
+/* Footer */
+.footer {
+    background: #050505;
+    padding: clamp(50px, 8vw, 80px) 20px 30px;
+    border-top: 1px solid rgba(255,255,255,.1);
 }
 
-
-
-
-
-.footer-grid{
-
-
-    display:grid;
-
-    grid-template-columns:
-
-    repeat(4,1fr);
-
-    gap:40px;
-
-
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
-
-
-
-
-.footer-logo img{
-
-
-    width:150px;
-
-
+.footer ul { list-style: none; padding: 0; }
+.footer ul li { margin-bottom: 12px; }
+.footer ul li a { color: #aaa; transition: 0.3s; text-decoration: none; }
+.footer-socials { display: flex; gap: 15px; flex-wrap: wrap; }
+.footer-socials a {
+    width: 40px; height: 40px; border-radius: 50%; display: flex;
+    align-items: center; justify-content: center; background: #111; transition: 0.4s;
+}
+.footer-bottom {
+    margin-top: 50px; padding-top: 25px;
+    border-top: 1px solid rgba(255,255,255,.1);
+    text-align: center; color: #777; font-size: 14px;
 }
 
-
-
-
-
-.footer p{
-
-
-    color:#999;
-
-    line-height:1.7;
-
-
+/* ========================================= */
+/* ETATS AU SURVOL (ISOLÉS POUR LE TACTILE)
+/* ========================================= */
+@media (hover: hover) and (pointer: fine) {
+    .tools-bar:hover .tool-item { transform: scale(0.95); }
+    .tools-bar .tool-item:hover { transform: scale(1.4) translateY(-8px); z-index: 10; }
+    .tool-item:hover::after { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+    
+    .skill-card:hover { transform: translateY(-12px); border-color: #ff6b00; box-shadow: 0 20px 50px rgba(255,107,0,.15); }
+    .project-card:hover { transform: translateY(-15px); border-color: #ff6b00; }
+    .project-card:hover .project-image img { transform: scale(1.08); }
+    .project-btn:hover, .footer ul li a:hover { color: #ff6b00; }
+    
+    .storyboard-card:hover .scene-number { transform: scale(1.05); }
+    .branding-card:hover { box-shadow: 0 25px 60px rgba(255,107,0,.15); }
+    
+    .logo-card:hover { transform: translateY(-15px) rotateY(10deg); border-color: #ff6b00; }
+    .logo-card:hover img { transform: scale(1.2) rotate(5deg); filter: drop-shadow(0 0 20px #ff6b00); }
+    
+    .poster-card:hover img { transform: scale(1.1); }
+    .web-card:hover { transform: translateY(-15px); border-color: #ff6b00; box-shadow: 0 25px 60px rgba(0,0,0,.4); }
+    .web-card:hover .web-image img { transform: scale(1.05); }
+    
+    .process-card:hover { transform: translateY(-12px); border-color: #ff6b00; }
+    .footer-socials a:hover { background: #ff6b00; transform: translateY(-5px); }
 }
 
+/* ========================================= */
+/* POINTS DE RUPTURE (MEDIA QUERIES) PRECIS
+/* ========================================= */
 
-
-
-
-.footer h3{
-
-
-    font-family:"Poppins",sans-serif;
-
-    margin-bottom:20px;
-
-
+/* Écrans Larges (Tablettes Paysage / Petits Laptops) */
+@media (max-width: 1200px) {
+    .skills-grid { grid-template-columns: repeat(4, 1fr); }
+    .branding-grid, .logos-showcase, .posters-grid, .process-grid { grid-template-columns: repeat(3, 1fr); }
+    .footer-grid { grid-template-columns: repeat(2, 1fr); gap: 30px; }
 }
 
-
-
-
-
-.footer ul{
-
-
-    list-style:none;
-
-    padding:0;
-
-
+/* Écrans Moyens (Tablettes Portrait) */
+@media (max-width: 992px) {
+    .skills-grid { grid-template-columns: repeat(3, 1fr); }
+    .illustration-grid, .digital-grid, .webdesign-grid { grid-template-columns: repeat(2, 1fr); }
+    .storyboard-grid { grid-template-columns: repeat(2, 1fr); }
+    
+    /* On force les éléments "span 2" à reprendre 1 seule place si la grille n'a plus que 2 colonnes, pour éviter les bugs */
+    .illustration-grid .horizontal, .digital-grid .horizontal, .storyboard-grid .horizontal {
+        grid-column: span 1;
+    }
 }
 
-
-
-
-
-.footer ul li{
-
-
-    margin-bottom:12px;
-
-
+/* Petits Écrans (Grands Smartphones) */
+@media (max-width: 768px) {
+    .tools-bar .tool-item:active { transform: scale(1.1); } /* Feedback tactile manuel */
+    
+    .skills-grid, .branding-grid, .logos-showcase, .posters-grid { grid-template-columns: repeat(2, 1fr); }
+    .process-grid { grid-template-columns: repeat(2, 1fr); }
+    .storyboard-grid { grid-template-columns: repeat(1, 1fr); }
 }
 
-
-
-
-
-.footer ul li a{
-
-
-    color:#aaa;
-
-    transition:.3s;
-
-
+/* Très Petits Écrans (Smartphones classiques) */
+@media (max-width: 576px) {
+    .skills-grid { grid-template-columns: repeat(2, 1fr); gap: 15px;} /* Garder 2 colonnes pour les petites cartes */
+    .illustration-grid, .digital-grid, .webdesign-grid, .branding-grid, .posters-grid, .process-grid {
+        grid-template-columns: 1fr;
+    }
+    /* Les logos peuvent tenir par deux si l'écran le permet, sinon 1 */
+    .logos-showcase { grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); }
+    .footer-grid { grid-template-columns: 1fr; text-align: center; }
+    
+    .footer-socials { justify-content: center; }
+    .footer-logo img { margin: 0 auto 20px; display: block; }
 }
-
-
-
-
-
-.footer ul li a:hover{
-
-
-    color:#ff6b00;
-
-
-}
-
-
-
-
-
-.footer-socials{
-
-
-    display:flex;
-
-    gap:15px;
-
-
-}
-
-
-
-
-
-.footer-socials a{
-
-
-    width:40px;
-
-    height:40px;
-
-    border-radius:50%;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    background:#111;
-
-    transition:.4s;
-
-
-}
-
-
-
-
-
-.footer-socials a:hover{
-
-
-    background:#ff6b00;
-
-    transform:translateY(-5px);
-
-
-}
-
-
-
-
-
-.footer-bottom{
-
-
-    margin-top:50px;
-
-    padding-top:25px;
-
-    border-top:
-
-    1px solid rgba(255,255,255,.1);
-
-    text-align:center;
-
-    color:#777;
-
-    font-size:14px;
-
-
-}
-
-
-
-
-
-
-
-
-
-/* =====================================================
-   RESPONSIVE FINAL
-===================================================== */
-
-
-
-@media(max-width:1200px){
-
-
-.skills-grid{
-
-
-grid-template-columns:
-
-repeat(3,1fr);
-
-
-}
-
-
-
-.illustration-grid,
-.digital-grid{
-
-
-grid-template-columns:
-
-repeat(2,1fr);
-
-
-}
-
-
-
-.webdesign-grid{
-
-
-grid-template-columns:
-
-repeat(2,1fr);
-
-
-}
-
-
-
-.process-grid{
-
-
-grid-template-columns:
-
-repeat(3,1fr);
-
-
-}
-
-
-
-.footer-grid{
-
-
-grid-template-columns:
-
-repeat(2,1fr);
-
-
-}
-
-
-
-}
-
-
-
-
-
-
-
-
-@media(max-width:800px){
-
-
-
-.portfolio-hero h1{
-
-
-font-size:42px;
-
-
-}
-
-
-
-.category-header h2{
-
-
-font-size:35px;
-
-
-}
-
-
-
-
-
-.skills-grid,
-.illustration-grid,
-.digital-grid,
-.webdesign-grid,
-.process-grid{
-
-
-grid-template-columns:
-
-1fr;
-
-
-}
-
-
-
-
-
-.footer-grid{
-
-
-grid-template-columns:
-
-1fr;
-
-
-}
-
-
-
-
-
-.portfolio-cta h2{
-
-
-font-size:35px;
-
-
-}
-
-
-
-}
-
-
-
-
-
-
-
-
-@media(max-width:500px){
-
-
-
-.portfolio-hero{
-
-
-padding-top:120px;
-
-
-}
-
-
-
-.portfolio-hero h1{
-
-
-font-size:34px;
-
-
-}
-
-
-
-.project-content{
-
-
-padding:25px;
-
-
-}
-
-
-
-.web-content{
-
-
-padding:
-
-0 20px 25px;
-
-
-}
-
-
-}
-
-
-
-/* =====================================================
-   FIN DU PORTFOLIO CSS COMPLET
-===================================================== */
