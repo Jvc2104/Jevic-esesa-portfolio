@@ -2181,210 +2181,113 @@
 
 
 /* =====================================================
-   RESPONSIVE FINAL
+   RESPONSIVE FINAL (OPTIMISÉ TABLETTES & SMARTPHONES)
 ===================================================== */
 
-
-
-@media(max-width:120px){
-
-
-.skills-grid{
-
-
-grid-template-columns:
-
-repeat(3,1fr);
-
-
+/* 1. TABLETTES PAYSAGE & PETITS ÉCRANS PC (iPad Pro, etc. - max 1200px) */
+@media (max-width: 1200px) {
+    .skills-grid {
+        grid-template-columns: repeat(4, 1fr); /* 4 colonnes au lieu de 3 pour plus d'harmonie */
+    }
+    .illustration-grid,
+    .digital-grid,
+    .webdesign-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .process-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
-
-
-.illustration-grid,
-.digital-grid{
-
-
-grid-template-columns:
-
-repeat(2,1fr);
-
-
+/* 2. TABLETTES PORTRAIT (iPad standard, Galaxy Tab - max 992px) */
+@media (max-width: 992px) {
+    .skills-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Réduction douce des textes avant de passer sur mobile */
+    .portfolio-hero h1 { font-size: 50px; }
+    .category-header h2 { font-size: 40px; }
+    .portfolio-cta h2 { font-size: 42px; }
 }
 
-
-
-.webdesign-grid{
-
-
-grid-template-columns:
-
-repeat(2,1fr);
-
-
+/* 3. GRANDS SMARTPHONES & PETITES TABLETTES (iPhone Pro Max, Plus - max 768px) */
+@media (max-width: 768px) {
+    .skills-grid {
+        /* On garde 2 colonnes pour les logos, sinon c'est trop gros */
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 15px;
+    }
+    
+    /* Les projets passent en 1 colonne pour bien voir les détails */
+    .illustration-grid,
+    .digital-grid,
+    .webdesign-grid,
+    .process-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center; /* Centre le footer sur mobile */
+    }
+    
+    .portfolio-hero h1 { font-size: 42px; }
+    .category-header h2 { font-size: 35px; }
+    .portfolio-cta h2 { font-size: 35px; }
 }
 
+/* 4. SMARTPHONES STANDARDS (iPhone classiques, Androids standards - max 500px) */
+@media (max-width: 500px) {
+    .portfolio-hero {
+        padding-top: 100px; /* Moins d'espace perdu en haut sur petit écran */
+        min-height: 60vh;
+    }
 
+    .portfolio-hero h1 {
+        font-size: 32px; /* Typographie adaptée aux petits écrans */
+        margin: 20px 0;
+    }
 
-.process-grid{
+    .portfolio-hero p {
+        font-size: 15px;
+    }
 
+    .project-content {
+        padding: 20px 15px; /* On réduit le padding pour laisser de la place au texte */
+    }
 
-grid-template-columns:
+    .web-content {
+        padding: 0 15px 20px;
+    }
 
-repeat(3,1fr);
-
-
+    .category-header h2 {
+        font-size: 28px;
+    }
+    
+    .skills-section, 
+    .portfolio-category, 
+    .process-section {
+        padding: 60px 0; /* On divise les espaces verticaux par deux */
+    }
 }
 
-
-
-.footer-grid{
-
-
-grid-template-columns:
-
-repeat(2,1fr);
-
-
+/* 5. TRES PETITS SMARTPHONES (iPhone SE, etc. - max 380px) */
+@media (max-width: 380px) {
+    .skills-grid {
+        /* Si l'écran est vraiment minuscule, on passe enfin à 1 colonne */
+        grid-template-columns: 1fr;
+    }
+    .portfolio-hero h1 {
+        font-size: 28px;
+    }
 }
-
-
-
-}
-
-
-
-
-
-
-
-
-@media(max-width:800px){
-
-
-
-.portfolio-hero h1{
-
-
-font-size:42px;
-
-
-}
-
-
-
-.category-header h2{
-
-
-font-size:35px;
-
-
-}
-
-
-
-
-
-.skills-grid,
-.illustration-grid,
-.digital-grid,
-.webdesign-grid,
-.process-grid{
-
-
-grid-template-columns:
-
-1fr;
-
-
-}
-
-
-
-
-
-.footer-grid{
-
-
-grid-template-columns:
-
-1fr;
-
-
-}
-
-
-
-
-
-.portfolio-cta h2{
-
-
-font-size:35px;
-
-
-}
-
-
-
-}
-
-
-
-
-
-
-
-
-@media(max-width:500px){
-
-
-
-.portfolio-hero{
-
-
-padding-top:120px;
-
-
-}
-
-
-
-.portfolio-hero h1{
-
-
-font-size:34px;
-
-
-}
-
-
-
-.project-content{
-
-
-padding:25px;
-
-
-}
-
-
-
-.web-content{
-
-
-padding:
-
-0 20px 25px;
-
-
-}
-
-
-}
-
-
-
 /* =====================================================
    FIN DU PORTFOLIO CSS COMPLET
 ===================================================== */
