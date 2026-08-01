@@ -2174,124 +2174,390 @@
 
 
 
-
-
-
-
-
-
 /* =====================================================
-   RESPONSIVE FINAL (OPTIMISÉ TABLETTES & SMARTPHONES)
+   RESPONSIVE FINAL
 ===================================================== */
 
-/* 1. TABLETTES PAYSAGE & PETITS ÉCRANS PC (iPad Pro, etc. - max 1200px) */
-@media (max-width: 1200px) {
-    .skills-grid {
-        grid-template-columns: repeat(4, 1fr); /* 4 colonnes au lieu de 3 pour plus d'harmonie */
-    }
-    .illustration-grid,
-    .digital-grid,
-    .webdesign-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .process-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-    .footer-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+
+
+@media(max-width:120px){
+
+
+.skills-{
+
+
+grid-template-columns:
+
+repeat(3,1fr);
+
+
 }
 
-/* 2. TABLETTES PORTRAIT (iPad standard, Galaxy Tab - max 992px) */
-@media (max-width: 992px) {
-    .skills-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-    .process-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    /* Réduction douce des textes avant de passer sur mobile */
-    .portfolio-hero h1 { font-size: 50px; }
-    .category-header h2 { font-size: 40px; }
-    .portfolio-cta h2 { font-size: 42px; }
+
+
+.illustration-grid,
+.digital-grid{
+
+
+grid-template-columns:
+
+repeat(2,1fr);
+
+
 }
 
-/* 3. GRANDS SMARTPHONES & PETITES TABLETTES (iPhone Pro Max, Plus - max 768px) */
-@media (max-width: 768px) {
-    .skills-grid {
-        /* On garde 2 colonnes pour les logos, sinon c'est trop gros */
-        grid-template-columns: repeat(2, 1fr); 
-        gap: 15px;
-    }
-    
-    /* Les projets passent en 1 colonne pour bien voir les détails */
-    .illustration-grid,
-    .digital-grid,
-    .webdesign-grid,
-    .process-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .footer-grid {
-        grid-template-columns: 1fr;
-        text-align: center; /* Centre le footer sur mobile */
-    }
-    
-    .portfolio-hero h1 { font-size: 42px; }
-    .category-header h2 { font-size: 35px; }
-    .portfolio-cta h2 { font-size: 35px; }
+
+
+.webdesign-grid{
+
+
+grid-template-columns:
+
+repeat(2,1fr);
+
+
 }
 
-/* 4. SMARTPHONES STANDARDS (iPhone classiques, Androids standards - max 500px) */
-@media (max-width: 500px) {
-    .portfolio-hero {
-        padding-top: 100px; /* Moins d'espace perdu en haut sur petit écran */
-        min-height: 60vh;
-    }
 
-    .portfolio-hero h1 {
-        font-size: 32px; /* Typographie adaptée aux petits écrans */
-        margin: 20px 0;
-    }
 
-    .portfolio-hero p {
-        font-size: 15px;
-    }
+.process-grid{
 
-    .project-content {
-        padding: 20px 15px; /* On réduit le padding pour laisser de la place au texte */
-    }
 
-    .web-content {
-        padding: 0 15px 20px;
-    }
+grid-template-columns:
 
-    .category-header h2 {
-        font-size: 28px;
-    }
-    
-    .skills-section, 
-    .portfolio-category, 
-    .process-section {
-        padding: 60px 0; /* On divise les espaces verticaux par deux */
-    }
+repeat(3,1fr);
+
+
 }
 
-/* 5. TRES PETITS SMARTPHONES (iPhone SE, etc. - max 380px) */
-@media (max-width: 380px) {
-    .skills-grid {
-        /* Si l'écran est vraiment minuscule, on passe enfin à 1 colonne */
-        grid-template-columns: 1fr;
-    }
-    .portfolio-hero h1 {
-        font-size: 28px;
-    }
+
+
+.footer-grid{
+
+
+grid-template-columns:
+
+repeat(2,1fr);
+
+
 }
+
+
+
+}
+
+
+
+
+
+
+
+
+@media(max-width:800px){
+
+
+
+.portfolio-hero h1{
+
+
+font-size:42px;
+
+
+}
+
+
+
+.category-header h2{
+
+
+font-size:35px;
+
+
+}
+
+
+
+
+
+.skills-grid,
+.illustration-grid,
+.digital-grid,
+.webdesign-grid,
+.process-grid{
+
+
+grid-template-columns:
+
+1fr;
+
+
+}
+
+
+
+
+
+.footer-grid{
+
+
+grid-template-columns:
+
+1fr;
+
+
+}
+
+
+
+
+
+.portfolio-cta h2{
+
+
+font-size:35px;
+
+
+}
+
+
+
+}
+
+
+
+
+
+
+
+
+@media(max-width:500px){
+
+
+
+.portfolio-hero{
+
+
+padding-top:120px;
+
+
+}
+
+
+
+.portfolio-hero h1{
+
+
+font-size:34px;
+
+
+}
+
+
+
+.project-content{
+
+
+padding:25px;
+
+
+}
+
+
+
+.web-content{
+
+
+padding:
+
+0 20px 25px;
+
+
+}
+
+
+}
+
+
 /* =====================================================
    FIN DU PORTFOLIO CSS COMPLET
 ===================================================== */
 
+/* =====================================================
+   SMARTPHONES & IPHONE
+   À ajouter à la fin de portfolio.css
+===================================================== */
 
+@media screen and (max-width: 768px) {
+
+    html{
+        overflow-x:hidden;
+    }
+
+    body{
+        overflow-x:hidden;
+    }
+
+    section{
+        padding:70px 20px;
+    }
+
+    .container{
+        width:100%;
+        max-width:100%;
+        padding:0 20px;
+    }
+
+    img{
+        max-width:100%;
+        height:auto;
+        display:block;
+    }
+
+    /* HERO */
+
+    .portfolio-hero{
+        min-height:auto;
+        padding:120px 20px 80px;
+        text-align:center;
+    }
+
+    .portfolio-hero h1{
+        font-size:2.2rem;
+        line-height:1.2;
+    }
+
+    .portfolio-hero p{
+        font-size:1rem;
+        line-height:1.7;
+    }
+
+    /* TITRES */
+
+    .category-header{
+        margin-bottom:50px;
+    }
+
+    .category-header h2{
+        font-size:2rem;
+        line-height:1.3;
+    }
+
+    .category-header p{
+        font-size:1rem;
+    }
+
+    /* GRILLES */
+
+    .skills-grid,
+    .illustration-grid,
+    .digital-grid,
+    .webdesign-grid,
+    .process-grid,
+    .footer-grid{
+        grid-template-columns:1fr !important;
+        gap:25px;
+    }
+
+    /* CARTES */
+
+    .project-card,
+    .web-card,
+    .skill-card,
+    .process-card{
+        width:100%;
+    }
+
+    .project-content,
+    .web-content{
+        padding:20px;
+    }
+
+    /* BOUTONS */
+
+    .btn,
+    button{
+        width:100%;
+        text-align:center;
+    }
+
+    /* CTA */
+
+    .portfolio-cta{
+        padding:70px 20px;
+        text-align:center;
+    }
+
+    .portfolio-cta h2{
+        font-size:2rem;
+    }
+
+    .portfolio-cta p{
+        font-size:1rem;
+    }
+
+}
+
+
+/* iPhone SE, petits Android */
+
+@media screen and (max-width:480px){
+
+    .portfolio-hero{
+        padding-top:110px;
+    }
+
+    .portfolio-hero h1{
+        font-size:1.8rem;
+    }
+
+    .portfolio-hero p{
+        font-size:.95rem;
+    }
+
+    .category-header h2{
+        font-size:1.7rem;
+    }
+
+    .category-header p{
+        font-size:.95rem;
+    }
+
+    .project-content,
+    .web-content{
+        padding:18px;
+    }
+
+    .portfolio-cta h2{
+        font-size:1.7rem;
+    }
+
+}
+
+
+/* Très petits smartphones */
+
+@media screen and (max-width:360px){
+
+    .portfolio-hero h1{
+        font-size:1.5rem;
+    }
+
+    .category-header h2{
+        font-size:1.5rem;
+    }
+
+    .portfolio-cta h2{
+        font-size:1.5rem;
+    }
+
+    section{
+        padding:60px 15px;
+    }
+
+    .container{
+        padding:0 15px;
+    }
+
+}
 
 
